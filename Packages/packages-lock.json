@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.easyar.sense": {
+      "version": "file:C:/Users/psych/Downloads/com.easyar.sense-4.5.0+2500.38660d14.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.12",
       "depth": 0,

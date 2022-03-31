@@ -23,4 +23,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IdiomaScene.unity
     guid: 66c04ce9795a9c541bb78d29ab8469c2
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/MenuBlackScene.unity
+    guid: 2843452888b4a5943ae5d401953e6c47
+  - enabled: 1
+    path: Assets/Scenes/VisitSceneAr .unity
+    guid: ce8b561887b6c904e858eac458d46dce
+  m_configObjects:
+    EasyAR.Settings: {fileID: 11400000, guid: 617ceab2aa16bad49864ec244f499235, type: 2}
