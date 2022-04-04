@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class textCambioClimatico
+    public class ObjectImgAndText
     {
         public int id { get; set;}
         public string titulo { get; set;}
