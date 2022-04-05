@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +18,20 @@ public class SelectParada : MonoBehaviour
 
     public Toggle historiaAborigen;
 
+    public GameObject iniciarVisita;
     private Toggle[] _toggles = new Toggle[5];
 
     private ArrayList nParadas = new ArrayList();
+
+    private bool imgActive;
     // called zero
-    public void addParada()
+
+    private void Awake()
+    {
+        iniciarVisita.SetActive(false);
+    }
+
+    public void addOrRemoveParada()
     {
         _toggles[0] = lugares;
         _toggles[1] = personajes;
@@ -78,7 +89,6 @@ public class SelectParada : MonoBehaviour
                         case "LugaresToggle": 
                             nParadas.Remove("futbol");
                             nParadas.Remove("laVica");
-                            Debug.Log(nParadas.Count);
                             break;
                         case "PersonajesToggle": 
                             //hermanosBethencourt
@@ -104,7 +114,35 @@ public class SelectParada : MonoBehaviour
                     }
                 }
             }
+
+            int nSelectOff = 0;
+            foreach (var toggle  in _toggles)
+            {
+                if (!toggle.isOn)
+                {
+                    nSelectOff++;
+                }
+            }
+            
+            if (nSelectOff==5)
+            {
+                imgActive = false;
+            }
+            else
+            {
+                imgActive = true;
+            }
             //videoCarga.SetActive(true);
            
         }
+
+    private void Start()
+    {
+        iniciarVisita.SetActive(false);
+    }
+
+    private void Update()
+    {
+        iniciarVisita.SetActive(imgActive);
+    }
 }
