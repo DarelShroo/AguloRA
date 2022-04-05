@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class SelectParada : MonoBehaviour
 {
     
@@ -38,7 +39,6 @@ public class SelectParada : MonoBehaviour
         _toggles[2] = arquitectura;
         _toggles[3] = tradiciones;
         _toggles[4] = historiaAborigen;
-
             if (Lenguage.idioma == null)
             {
                 Lenguage.idioma = "es";
@@ -49,69 +49,27 @@ public class SelectParada : MonoBehaviour
             {
                 if (toggle.isOn)
                 {
-                    switch (toggle.name)
-                    {
-                        case "LugaresToggle": 
-                            //campoFutbol
-                            //LaVica
-                            nParadas.Add("futbol");
-                            nParadas.Add("laVica");
-                            Debug.Log(nParadas.Count);
-                            break;
-                        case "PersonajesToggle": 
-                            //hermanosBethencourt
-                            //LeoncioBento
-                            //cesarinaBento
-                            //FélixHerrera
-                            //filichristi
-                            //PedroSanchez
-                            //AntonioJesus
-                            break;
-                        case "ArquitecturaToggle": 
-                            //acequiaPerez
-                            //CasaPintorAguiar
-                            //ElPescante
-                            break;
-                        case "TradicionesToggle": 
-                            //LosPiques
-                            //Hogeras
-                            break;
-                        case "HistoriaAborigenToggle": 
-                            //CuevaAborigen
-                            break;
-                    }
+                    Paradas.active.Add(toggle.name.ToLower());
                 }
                 
                 if (!toggle.isOn)
                 {
-                    switch (toggle.name)
-                    {
-                        case "LugaresToggle": 
-                            nParadas.Remove("futbol");
-                            nParadas.Remove("laVica");
-                            break;
-                        case "PersonajesToggle": 
-                            //hermanosBethencourt
-                            //LeoncioBento
-                            //cesarinaBento
-                            //FélixHerrera
-                            //filichristi
-                            //PedroSanchez
-                            //AntonioJesus
-                            break;
-                        case "ArquitecturaToggle": 
-                            //acequiaPerez
-                            //CasaPintorAguiar
-                            //ElPescante
-                            break;
-                        case "TradicionesToggle": 
-                            //LosPiques
-                            //Hogeras
-                            break;
-                        case "HistoriaAborigenToggle": 
-                            //CuevaAborigen
-                            break;
-                    }
+                    Paradas.active.Remove(toggle.name.ToLower());
+                }
+            }
+            
+
+            foreach (var parada in Paradas.instance.listaParadas)
+            {
+                Parada p = (Parada)parada;
+                Debug.Log(p.Tipo);
+                if (Paradas.active.Contains(p.Tipo.ToLower()))
+                {
+                    p.Visible = true;
+                }
+                else
+                {
+                    p.Visible = false;
                 }
             }
 

@@ -5,29 +5,32 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/IdiomaScene.unity
     guid: 66c04ce9795a9c541bb78d29ab8469c2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PrimaryScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VisitScene.unity
     guid: f7f9e3ea79d89e84c831c76f455f4257
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CambioClimaticoScene.unity
     guid: 139f915317fed2048b15f6c921579d1d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FuncionesAppScene.unity
     guid: b0a2f3d0763561745b6aef610a1a41b7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ApoyoInstitucionalScene.unity
     guid: 881ea85ce7cc7014da65e0be8b23ae5e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MenuBlackScene.unity
     guid: 2843452888b4a5943ae5d401953e6c47
   - enabled: 1
     path: Assets/Scenes/VisitSceneAr .unity
     guid: ce8b561887b6c904e858eac458d46dce
+  - enabled: 1
+    path: Assets/Scenes/MapaScene.unity
+    guid: 351d067464daf404ab06ee11ec96e917
   m_configObjects:
     EasyAR.Settings: {fileID: 11400000, guid: 617ceab2aa16bad49864ec244f499235, type: 2}

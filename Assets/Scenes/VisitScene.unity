@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 223612771}
   - component: {fileID: 223612770}
   m_Layer: 5
-  m_Name: Lugares
+  m_Name: LugaresMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 456830597}
   - component: {fileID: 456830598}
   m_Layer: 5
-  m_Name: LugaresToggle
+  m_Name: Lugares
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 749324667}
   - component: {fileID: 749324666}
   m_Layer: 5
-  m_Name: Arquitectura
+  m_Name: ArquitecturaMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1718,7 +1718,7 @@ GameObject:
   - component: {fileID: 1061125592}
   - component: {fileID: 1061125593}
   m_Layer: 5
-  m_Name: ArquitecturaToggle
+  m_Name: Arquitectura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1950,7 +1950,7 @@ GameObject:
   - component: {fileID: 1113923697}
   - component: {fileID: 1113923696}
   m_Layer: 5
-  m_Name: Personajes
+  m_Name: PersonajesMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2463,7 +2463,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2809,7 +2809,7 @@ GameObject:
   - component: {fileID: 1473206470}
   - component: {fileID: 1473206469}
   m_Layer: 5
-  m_Name: Tradiciones
+  m_Name: TradicionesMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2996,7 +2996,7 @@ GameObject:
   - component: {fileID: 1616208212}
   - component: {fileID: 1616208213}
   m_Layer: 5
-  m_Name: PersonajesToggle
+  m_Name: Personajes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3096,7 +3096,7 @@ GameObject:
   - component: {fileID: 1630348265}
   - component: {fileID: 1630348264}
   m_Layer: 5
-  m_Name: HistoriaAborigen
+  m_Name: HistoriaAborigenMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3215,7 +3215,7 @@ GameObject:
   - component: {fileID: 1688917097}
   - component: {fileID: 1688917098}
   m_Layer: 5
-  m_Name: TradicionesToggle
+  m_Name: Tradiciones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3313,7 +3313,7 @@ GameObject:
   - component: {fileID: 1871831686}
   - component: {fileID: 1871831687}
   m_Layer: 5
-  m_Name: HistoriaAborigenToggle
+  m_Name: HistoriaAborigen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
