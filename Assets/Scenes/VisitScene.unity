@@ -525,8 +525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -76}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 7, y: -62.655}
+  m_SizeDelta: {x: 0, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &224472370
 MonoBehaviour:
@@ -883,6 +883,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1453163264}
+        m_TargetAssemblyTypeName: SelectParada, Assembly-CSharp
+        m_MethodName: setToggle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 456830598}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1804,6 +1816,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1453163264}
+        m_TargetAssemblyTypeName: SelectParada, Assembly-CSharp
+        m_MethodName: setToggle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1061125593}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1085307662
 GameObject:
@@ -2159,7 +2183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
+  m_AnchoredPosition: {x: 60, y: -20}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1317527239
@@ -2214,6 +2238,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1453163265}
+        m_TargetAssemblyTypeName: ResetStateCheckBox, Assembly-CSharp
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2468,6 +2504,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1453163264}
+        m_TargetAssemblyTypeName: SelectParada, Assembly-CSharp
+        m_MethodName: paradasAmostrar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1365562345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,6 +2679,7 @@ GameObject:
   - component: {fileID: 1453163262}
   - component: {fileID: 1453163261}
   - component: {fileID: 1453163264}
+  - component: {fileID: 1453163265}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2721,6 +2770,18 @@ MonoBehaviour:
   tradiciones: {fileID: 1688917098}
   historiaAborigen: {fileID: 1871831687}
   iniciarVisita: {fileID: 1339485582}
+--- !u!114 &1453163265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453163260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c3e226779424f49bb4a66eedb2c6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460310629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,6 +3033,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7881423222059605746, guid: c37e20f81243f7741a057af4893d705b, type: 3}
+      propertyPath: lugares
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c37e20f81243f7741a057af4893d705b, type: 3}
 --- !u!114 &1606775638 stripped
@@ -3077,6 +3142,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1453163264}
+        m_TargetAssemblyTypeName: SelectParada, Assembly-CSharp
+        m_MethodName: setToggle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1616208213}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3301,6 +3378,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1453163264}
+        m_TargetAssemblyTypeName: SelectParada, Assembly-CSharp
+        m_MethodName: setToggle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1688917098}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1871831685
 GameObject:
@@ -3399,6 +3488,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1453163264}
+        m_TargetAssemblyTypeName: SelectParada, Assembly-CSharp
+        m_MethodName: setToggle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1871831687}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1912503488
 GameObject:
@@ -3435,7 +3536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 0}
+  m_AnchoredPosition: {x: -60, y: -20}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912503490
@@ -3962,3 +4063,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125226183}
   m_CullTransparentMesh: 1
+--- !u!1001 &1265807723975149858
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 911642263546575855, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_Name
+      value: CheckBoxState
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -230.94019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1900.0503
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -480.47754
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284054547545081255, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad125801591ad5b4ca32aeb12efd3732, type: 3}

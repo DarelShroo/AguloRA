@@ -35,7 +35,6 @@
 				p = (Parada) Paradas.instance.listaParadas[i];
 				var locationString = p.Coordenadas;
 				_locations[i] = Conversions.StringToLatLon(locationString);
-				Debug.Log("hola");
 				if (p.Visible)
 				{
 					var instance = Instantiate(_markerPrefab);

@@ -12,8 +12,8 @@ public class Paradas : MonoBehaviour
     
     private Paradas()
     {
-        paradas.Add(new Parada("El Chorro (La Vica)", "28.185979342838800,-17.194736627318500", "lugares", false));
-        paradas.Add(new Parada("Campo de fútbol (Antiguas plataneras)", "28.188905058174800,-17.196098556066700", "lugares", false));
+        paradas.Add(new Parada("El Chorro (La Vica)", "28.185979342838800,-17.194736627318500", "lugares", true));
+        paradas.Add(new Parada("Campo de fútbol (Antiguas plataneras)", "28.188905058174800,-17.196098556066700", "lugares", true));
         paradas.Add(new Parada("Cesarina Bento","28.187580190227000, -17.194099099175500","personajes",false));
         paradas.Add(new Parada("Leoncio Bento","28.188920,-17.194191","personajes",false));
         paradas.Add(new Parada("Casa de Pedro Sánchez Padilla","28.189146490734600,-17.194580294917400","personajes",false));

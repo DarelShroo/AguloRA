@@ -1,14 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class SelectParada : MonoBehaviour
 {
-    
+
     public Toggle lugares;
 
     public Toggle personajes;
@@ -20,79 +16,93 @@ public class SelectParada : MonoBehaviour
     public Toggle historiaAborigen;
 
     public GameObject iniciarVisita;
-    private Toggle[] _toggles = new Toggle[5];
-
-    private ArrayList nParadas = new ArrayList();
-
+    
     private bool imgActive;
-    // called zero
-
+    
+    private int nSelectOff = 0;
+    
     private void Awake()
     {
         iniciarVisita.SetActive(false);
     }
-
+    
     public void addOrRemoveParada()
     {
-        _toggles[0] = lugares;
-        _toggles[1] = personajes;
-        _toggles[2] = arquitectura;
-        _toggles[3] = tradiciones;
-        _toggles[4] = historiaAborigen;
-            if (Lenguage.idioma == null)
-            {
-                Lenguage.idioma = "es";
-            }
-            //TODO descomentar linea videoCarga
-            //videoCarga.SetActive(false);
-            foreach (var toggle in _toggles)
-            {
-                if (toggle.isOn)
-                {
-                    Paradas.active.Add(toggle.name.ToLower());
-                }
-                
-                if (!toggle.isOn)
-                {
-                    Paradas.active.Remove(toggle.name.ToLower());
-                }
-            }
-            
+        if (Lenguage.idioma == null)
+        {
+            Lenguage.idioma = "es";
+        }
 
-            foreach (var parada in Paradas.instance.listaParadas)
-            {
-                Parada p = (Parada)parada;
-                Debug.Log(p.Tipo);
-                if (Paradas.active.Contains(p.Tipo.ToLower()))
-                {
-                    p.Visible = true;
-                }
-                else
-                {
-                    p.Visible = false;
-                }
-            }
+        //TODO descomentar linea videoCarga
+        //videoCarga.SetActive(false);
+        
+    
 
-            int nSelectOff = 0;
-            foreach (var toggle  in _toggles)
+        //videoCarga.SetActive(true);
+    }
+
+    public void paradasAmostrar()
+    {
+        foreach (var parada in Paradas.instance.listaParadas)
+        {
+            Parada p = (Parada) parada;
+            Debug.Log(p.Tipo);
+            if (Paradas.active.Contains(p.Tipo.ToLower()))
             {
-                if (!toggle.isOn)
-                {
-                    nSelectOff++;
-                }
-            }
-            
-            if (nSelectOff==5)
-            {
-                imgActive = false;
+                p.Visible = true;
             }
             else
             {
-                imgActive = true;
+                p.Visible = false;
             }
-            //videoCarga.SetActive(true);
-           
         }
+    }
+
+    public void setToggle(Toggle toggle)
+    {
+        if (toggle.isOn)
+        {
+            nSelectOff++;
+            list(toggle.name.ToLower(), true);
+            Paradas.active.Add(toggle.name.ToLower());
+        }
+        else
+        {
+            nSelectOff--;
+            list(toggle.name.ToLower(), false);
+            Paradas.active.Remove(toggle.name.ToLower());
+        }
+    }
+
+    private void list(string nombre, bool active)
+    {
+        switch (nombre)
+        {
+            case "lugares": 
+                CheckboxsState.instance.Lugares = active;
+                break;
+            case "personajes": 
+                CheckboxsState.instance.Personajes = active;
+                break;
+            case "arquitectura": 
+                CheckboxsState.instance.Arquitectura = active;
+                break;
+            case "tradiciones": 
+                CheckboxsState.instance.Tradiciones = active;
+                break;
+            case "historiaaborigen": 
+                CheckboxsState.instance.HistoriaAborigen = active;
+                break;
+        }
+    }
+
+    private void listener(bool state, Toggle toggle)
+    {
+        if (state)
+        {
+            toggle.isOn = true;
+        }
+    }
 
     private void Start()
     {
@@ -101,6 +111,21 @@ public class SelectParada : MonoBehaviour
 
     private void Update()
     {
+        if (nSelectOff == 0)
+        {
+            imgActive = false;
+        }
+        else
+        {
+            imgActive = true;
+        }
+        
+        listener(CheckboxsState.instance.Lugares, lugares);
+        listener(CheckboxsState.instance.Personajes, personajes);
+        listener(CheckboxsState.instance.Arquitectura, arquitectura);
+        listener(CheckboxsState.instance.Tradiciones, tradiciones);
+        listener(CheckboxsState.instance.HistoriaAborigen, historiaAborigen);
+
         iniciarVisita.SetActive(imgActive);
     }
 }
