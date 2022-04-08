@@ -1,4 +1,7 @@
-﻿using System.Threading;
+using System.Threading;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Mapbox.Examples
 {
@@ -9,7 +12,7 @@ namespace Mapbox.Examples
 	using Mapbox.Unity.Utilities;
 	using System.Collections.Generic;
 
-	public class SpawnOnMap : MonoBehaviour
+	public class SpawnOnMapMod : MonoBehaviour
 	{
 		[SerializeField]
 		AbstractMap _map;
@@ -43,15 +46,18 @@ namespace Mapbox.Examples
 					instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
 					var texto = instance.GetComponentInChildren<TextMesh>();
 					var nombre = addSaltoLinea(p.Nombre);
-					
+
 					texto.text = nombre;
+
+					//instance.AddComponent<Button>();
+					//instance.GetComponent<Button>().onClick.AddListener(delegate {   SceneManager.LoadScene(1);
+ //});
 					Thread.Sleep(1);
 					//instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 					_spawnedObjects.Add(instance);
 				}
 			}
 		}
-		
 		
 		private string addSaltoLinea(string nombre)
 		{

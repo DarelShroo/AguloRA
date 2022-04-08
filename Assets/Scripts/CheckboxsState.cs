@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,15 @@ public class CheckboxsState : MonoBehaviour
     private static bool tradiciones;
 
     private static  bool historiaAborigen;
-    
+
+    private static string nameInfo;
+
+    public static string NameInfo
+    {
+        get => nameInfo;
+        set => nameInfo = value;
+    }
+
     private  GameObject iniciarVisita;
 
     private bool iniciado = false;

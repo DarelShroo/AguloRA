@@ -12,5 +12,12 @@ public class ResetStateCheckBox : MonoBehaviour
         CheckboxsState.instance.Arquitectura = false;
         CheckboxsState.instance.Tradiciones = false;
         CheckboxsState.instance.HistoriaAborigen = false;
+        
+        Paradas.active.Clear();
+    }
+
+    public void ResetParadas()
+    {
+        Paradas.active.Clear();
     }
 }
