@@ -65,33 +65,45 @@ namespace DefaultNamespace
             }
             else
             {
+                
+                
+                
                 var json =
                     JsonConvert.DeserializeObject<List<ObjectInfoParada>>(request.downloadHandler.text);
-                descripcion = json[1].descripcion
-                    .Replace("<p>", "")
-                    .Replace("</p>", "")
-                    .Replace("&#8211;", "- ")
-                    .Replace("&nbsp;", "\n")
-                    .Replace("<li>", "*")
-                    .Replace("</li>", "</line-height>")
-                    .Replace("<ul>", "")
-                    .Replace("</ul>", "")
-                    .Replace("<strong>", "<b>")
-                    .Replace("</strong>","</b>")
-                    .Replace("<p dir="+'"'+"ltr"+'"'+" data-placeholder="+'"'+"Traducción"+'"'+">","")
-                    .Replace("<p id="+'"'+"tw-target-text"+'"'+ " class="+'"'+"tw-data-text tw-text-large XcVN5d tw-ta"+'"'+ " dir="+'"'+"ltr"+'"'+ " data-placeholder="+'"'+"Traducción"+'"'+">", "")
-                    .Replace("<p class="+'"'+"tw-data-text tw-text-large XcVN5d tw-ta"+'"' +" dir="+'"'+"ltr"+'"'+" data-placeholder="+'"'+"Traducción"+'"'+">","\n")
-                    .Replace("<span class="+'"'+"Y2IQFc"+'"'+ " lang="+'"'+"en"+'"'+">","<font-weight=400>")
-                    .Replace("<span style="+'"'+"font-weight: 400;"+'"'+">", "<font-weight=400>")
-                    .Replace("<li style="+'"'+"font-weight: 400;"+'"' +" aria-level="+'"'+"1"+'"'+">", "* <line-height=120%><font-weight=400>")
-                    .Replace("</span>", "</font-weight>");
-                textDescripcion.text = descripcion;
-                Debug.Log(json[1].titulo);
-                   titulo.text = json[1].titulo;
-                // textSaludo.text = json[0].saludo;
-                // slug = json[0].slug;
-                // id_parada = json[0].id_parada;
-                img_url = json[1].imagen;
+
+                foreach (var data in json)
+                {
+                    Debug.Log("datatitulo ->" + data.titulo);
+                    if (data.titulo.Equals(ComponentInfo.instance.textName.text.Replace("\n", "")))
+                    {
+                        Debug.Log(("valor open info -> "+name.Replace("\n", "")));
+                        Debug.Log(("valor original -> " +data.titulo));
+                        descripcion = data.descripcion
+                            .Replace("<p>", "")
+                            .Replace("</p>", "")
+                            .Replace("&#8211;", "- ")
+                            .Replace("&nbsp;", "\n")
+                            .Replace("<li>", "*")
+                            .Replace("</li>", "</line-height>")
+                            .Replace("<ul>", "")
+                            .Replace("</ul>", "")
+                            .Replace("<strong>", "<b>")
+                            .Replace("</strong>","</b>")
+                            .Replace("<p dir="+'"'+"ltr"+'"'+" data-placeholder="+'"'+"Traducción"+'"'+">","")
+                            .Replace("<p id="+'"'+"tw-target-text"+'"'+ " class="+'"'+"tw-data-text tw-text-large XcVN5d tw-ta"+'"'+ " dir="+'"'+"ltr"+'"'+ " data-placeholder="+'"'+"Traducción"+'"'+">", "")
+                            .Replace("<p class="+'"'+"tw-data-text tw-text-large XcVN5d tw-ta"+'"' +" dir="+'"'+"ltr"+'"'+" data-placeholder="+'"'+"Traducción"+'"'+">","\n")
+                            .Replace("<span class="+'"'+"Y2IQFc"+'"'+ " lang="+'"'+"en"+'"'+">","<font-weight=400>")
+                            .Replace("<span style="+'"'+"font-weight: 400;"+'"'+">", "<font-weight=400>")
+                            .Replace("<li style="+'"'+"font-weight: 400;"+'"' +" aria-level="+'"'+"1"+'"'+">", "* <line-height=120%><font-weight=400>")
+                            .Replace("</span>", "</font-weight>");
+                        textDescripcion.text = descripcion;
+                        titulo.text = data.titulo;
+                        // textSaludo.text = json[0].saludo;
+                        // slug = json[0].slug;
+                        // id_parada = json[0].id_parada;
+                        img_url = data.imagen;
+                    }
+                }
             }
         }
         [RuntimeInitializeOnLoadMethod]
