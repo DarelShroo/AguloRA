@@ -302,6 +302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2147453170}
     m_Modifications:
+    - target: {fileID: 4890088966096879812, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4890088966096879814, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -340,11 +344,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4890088966528296428, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 244.94902
+      value: 259.80765
       objectReference: {fileID: 0}
     - target: {fileID: 4890088966528296428, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890088966528296432, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4890088966732493065, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -469,6 +477,10 @@ PrefabInstance:
     - target: {fileID: 4890088967190864556, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890088967590100428, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4890088967590100429, guid: 0ceac97d186e7e64c8fa18a39fc8345a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -776,6 +788,7 @@ GameObject:
   - component: {fileID: 2147453169}
   - component: {fileID: 2147453168}
   - component: {fileID: 2147453167}
+  - component: {fileID: 2147453166}
   m_Layer: 5
   m_Name: CambioClimaticoCanvas
   m_TagString: Untagged
@@ -783,6 +796,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2147453166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147453165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2147453167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,10 +1021,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2269993907413900389}
-        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
-        m_MethodName: switchScene
-        m_Mode: 3
+      - m_Target: {fileID: 2147453166}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: openMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1270,7 +1295,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

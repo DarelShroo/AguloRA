@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class ComponentInfo : MonoBehaviour
 {
     public static ComponentInfo instance;
-    public  Image bannerAr;
-    public  Image flecha;
-    public Text textActivarAr; 
+    public Image bannerAr;
+    public Image flecha;
+
+    public Text textActivarAr;
+
     //public static  Text textActivarAr;
     public Text textName;
 
@@ -25,11 +27,11 @@ public class ComponentInfo : MonoBehaviour
         set => bannerAr = value;
     }
 
-   /* public Text TextActivarAr
-    {
-        get => textActivarAr;
-        set => textActivarAr = value;
-    }*/
+    /* public Text TextActivarAr
+     {
+         get => textActivarAr;
+         set => textActivarAr = value;
+     }*/
 
     public Text TextName
     {
@@ -42,8 +44,6 @@ public class ComponentInfo : MonoBehaviour
         bannerAr.color = OpenInfo.colorActivarAr; // Color banner
         textName.text = OpenInfo.name.Replace("\n", "");
         textActivarAr.color = OpenInfo.textActivarAr;
-
-
         // ComponentInfo.instance.textName.text = name.Replace("\n", ""); // Modifico el texto
         //ComponentInfo.instance.textActivarAr.color = textActivarAr; // modifico el color del texto
     }

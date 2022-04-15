@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 241.61618, y: 0}
+  m_AnchoredPosition: {x: 259.80762, y: 0}
   m_SizeDelta: {x: 529.6328, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &102496336
@@ -234,7 +234,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 7
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -413,7 +413,7 @@ MonoBehaviour:
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
-  m_ChildAlignment: 4
+  m_ChildAlignment: 7
   m_Spacing: 1
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 7
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1310,6 +1310,7 @@ GameObject:
   - component: {fileID: 1872156083}
   - component: {fileID: 1872156082}
   - component: {fileID: 1872156081}
+  - component: {fileID: 1872156086}
   m_Layer: 5
   m_Name: CambioClimaticoCanvas
   m_TagString: Untagged
@@ -1411,6 +1412,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1872156086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872156080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1964523974 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6850025420347348737, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
@@ -1423,6 +1436,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1872156085}
     m_Modifications:
+    - target: {fileID: 6850025420230638234, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420250724876, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Text
+      value: CAMBIO CLIMATICO
+      objectReference: {fileID: 0}
     - target: {fileID: 6850025420347348737, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1510,6 +1531,26 @@ PrefabInstance:
     - target: {fileID: 6850025420347348750, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
       propertyPath: m_Name
       value: CabeceraBotonesTituloMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420494918404, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3244e35ee7848b439a2f4531909ad86, type: 3}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1872156086}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}

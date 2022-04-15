@@ -467,10 +467,10 @@ RectTransform:
   m_Father: {fileID: 1332014360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.00022888}
-  m_SizeDelta: {x: 0, y: 817.22}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115836780
 MonoBehaviour:
@@ -1161,8 +1161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -595}
-  m_SizeDelta: {x: 0, y: 220}
+  m_AnchoredPosition: {x: 0, y: -597.975}
+  m_SizeDelta: {x: 0, y: 200.05005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495910583
 MonoBehaviour:
@@ -1782,6 +1782,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104708764}
     m_Modifications:
+    - target: {fileID: 6850025420230638234, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420250724876, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Text
+      value: APOYO INSTITUCIONAL
+      objectReference: {fileID: 0}
     - target: {fileID: 6850025420347348737, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1870,6 +1878,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: CabeceraBotonesTituloMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6850025420494918404, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2800dc7fb6aa4e847ab9506aa879ceec, type: 3}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2104708767}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
 --- !u!224 &1183325868 stripped
@@ -1913,8 +1945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100.72}
-  m_SizeDelta: {x: 0, y: -176.09}
+  m_AnchoredPosition: {x: 0, y: -94.3825}
+  m_SizeDelta: {x: 0, y: -188.765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332014361
 MonoBehaviour:
@@ -2111,7 +2143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -277.60696}
+  m_AnchoredPosition: {x: 0, y: -330.4524}
   m_SizeDelta: {x: 0, y: 1395.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471739635
@@ -2545,6 +2577,7 @@ GameObject:
   - component: {fileID: 2104708761}
   - component: {fileID: 2104708765}
   - component: {fileID: 2104708766}
+  - component: {fileID: 2104708767}
   m_Layer: 5
   m_Name: ApoyoInstitucionalCanvas
   m_TagString: Untagged
@@ -2656,6 +2689,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edb8920eff1b38548b9d3da707d915ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2104708767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104708760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2131569476

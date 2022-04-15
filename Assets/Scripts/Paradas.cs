@@ -26,9 +26,7 @@ public class Paradas : MonoBehaviour
         paradas.Add(new Parada("Las Hogueras de San Marcos","28.188787,-17.194006","tradiciones",false));
         paradas.Add(new Parada("Los Piques","28.188905164858900,-17.194781497651700","tradiciones",false));
         paradas.Add(new Parada("Casa natal Antonio Jesús Trujillo Armas", "28.189010222952400,-17.194472658744500", "personajes", false));
-        paradas.Add(new Parada("Cueva aborigen", "28.186642430801000,-17.195661536125900", "historiaAborigen", false));
-        
-        Debug.Log(paradas);
+        paradas.Add(new Parada("Cueva aborigen", "28.186642430801000,-17.195661536125900", "historiaaborigen", false));
     }
 
     private void Awake()

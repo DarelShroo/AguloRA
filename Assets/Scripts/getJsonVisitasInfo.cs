@@ -73,8 +73,7 @@ namespace DefaultNamespace
 
                 foreach (var data in json)
                 {
-                    Debug.Log("datatitulo ->" + data.titulo);
-                    if (data.titulo.Equals(ComponentInfo.instance.textName.text.Replace("\n", "")))
+                    if (data.titulo.Equals(OpenInfo.name.Replace("\n", "")))
                     {
                         Debug.Log(("valor open info -> "+name.Replace("\n", "")));
                         Debug.Log(("valor original -> " +data.titulo));

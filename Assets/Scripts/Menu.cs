@@ -28,7 +28,7 @@ public class Menu : MonoBehaviour
    {
       backScene =  SceneManager.GetActiveScene().buildIndex;
       Debug.Log(backScene); 
-      SceneManager.LoadScene(6);
+      SceneManager.LoadScene(9);
    }
    
    public void closeMenu()

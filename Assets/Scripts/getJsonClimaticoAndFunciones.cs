@@ -33,7 +33,7 @@ namespace DefaultNamespace
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
-            if (SceneManager.GetActiveScene().buildIndex == 3 )
+            if (SceneManager.GetActiveScene().buildIndex == 4 )
             {
                 url = urlClimatico;
             }

@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 135322936}
   - component: {fileID: 135322935}
   - component: {fileID: 135322934}
+  - component: {fileID: 135322938}
   - component: {fileID: 135322933}
   m_Layer: 5
   m_Name: FuncionesAppCanvas
@@ -338,6 +339,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &135322938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135322932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &579621304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,6 +486,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 135322937}
     m_Modifications:
+    - target: {fileID: 6850025420230638234, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420250724876, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Text
+      value: APP Y FUNCIONES
+      objectReference: {fileID: 0}
     - target: {fileID: 6850025420347348737, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -560,6 +581,26 @@ PrefabInstance:
     - target: {fileID: 6850025420347348750, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
       propertyPath: m_Name
       value: CabeceraBotonesTituloMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420494918404, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f6ac1eaf15626c42a60e87b85365c57, type: 3}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 135322938}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025421284540855, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
@@ -1256,7 +1297,7 @@ MonoBehaviour:
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
-  m_ChildAlignment: 4
+  m_ChildAlignment: 7
   m_Spacing: 1
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1298,7 +1339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 241.61613, y: 0}
+  m_AnchoredPosition: {x: 259.80762, y: 0}
   m_SizeDelta: {x: 490.01, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4890088968085705443

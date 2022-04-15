@@ -1,4 +1,9 @@
+using System;
+using System.Collections;
+using System.IO;
+using System.Linq;
 using System.Threading;
+using UnityEditor;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,11 +35,29 @@ namespace Mapbox.Examples
 
 		List<GameObject> _spawnedObjects;
 
+		public Material lugares;
+		public Material personajes;
+		public Material arquitectura;
+		public Material historiaaborigen;
+		public Material tradiciones;
+		public Material visitado;
 		void Start()
 		{
 			Parada p = new Parada();
 			_locations = new Vector2d[Paradas.instance.listaParadas.Count];
 			_spawnedObjects = new List<GameObject>();
+
+			
+			string path = Application.persistentDataPath+"/paradasVisitadas.txt";
+
+			if (!File.Exists(path))
+			{
+				File.Create(path);
+			}
+			
+			var lineas = File.ReadLines(path);
+			var enumerable = lineas.ToList();
+			
 			for (int i = 0; i < Paradas.instance.listaParadas.Count; i++)
 			{
 				p = (Parada) Paradas.instance.listaParadas[i];
@@ -44,40 +67,65 @@ namespace Mapbox.Examples
 				{
 					var instance = Instantiate(_markerPrefab);
 					instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
-					var texto = instance.GetComponentInChildren<TextMesh>();
-					var nombre = addSaltoLinea(p.Nombre);
-
-					texto.text = nombre;
+					instance.GetComponentInChildren<TextMesh>().text = p.Nombre.Length > 14 ? addSaltoLinea(p.Nombre) : p.Nombre;
+					var canvas = instance.transform.GetChild(1);
+					var cube = canvas.GetChild(0);
+					
+					switch (p.Tipo)
+					{
+						case "lugares":
+							comprueba(enumerable, cube, p.Nombre, lugares);
+							break;
+						case "personajes":
+							comprueba(enumerable, cube, p.Nombre, personajes);
+							break;
+						case "arquitectura":
+							comprueba(enumerable, cube, p.Nombre, arquitectura);
+							break;
+						case "historiaaborigen":
+							comprueba(enumerable, cube, p.Nombre, historiaaborigen);
+							break;
+						case "tradiciones": 
+							comprueba(enumerable, cube, p.Nombre, tradiciones);
+							break;
+					}
 
 					//instance.AddComponent<Button>();
 					//instance.GetComponent<Button>().onClick.AddListener(delegate {   SceneManager.LoadScene(1);
  //});
-					Thread.Sleep(1);
 					//instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 					_spawnedObjects.Add(instance);
 				}
 			}
 		}
-		
+
 		private string addSaltoLinea(string nombre)
 		{
 			int tamanioCadena = nombre.Length;
 			string temp = "";
-			 
-			if (tamanioCadena > 10)
-			{
-				
-				for (int i = 0; i < tamanioCadena; i++)
+			for (int i = 0; i < tamanioCadena; i++)
 				{
 					temp += nombre[i];
-					if (i > 10 && nombre[i] == ' ')
+					if (i > 14 && nombre[i] == ' ')
 					{
 						temp += "\n";
 					}
 				}
-			}
-
 			return temp;
+		}
+
+		private void comprueba(List<string> enumerable, Transform cube, string nombre, Material material)
+		{
+			Debug.Log("el nombre es -> " +nombre);
+			
+			if (enumerable.Contains(nombre))
+			{
+				cube.GetComponent<MeshRenderer>().material = visitado;
+			}
+			else
+			{
+				cube.GetComponent<MeshRenderer>().material = material;
+			}
 		}
 
 		private void Update()

@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class setNameVisitasAr : MonoBehaviour
 {
     public Text text;
-
     public void Update()
     {
-        text.text = ComponentInfo.instance.textName.text;
+        text.text = OpenInfo.name.Replace("\n","");
     }
 }

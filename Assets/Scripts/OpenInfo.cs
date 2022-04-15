@@ -34,7 +34,6 @@ public class OpenInfo : MonoBehaviour
     public void getNameParada(GameObject getNameParada)
     {
         name = getNameParada.GetComponent<TextMesh>().text;
-        Debug.Log("valor de name -> " + name);
         colorActivarAr = new Color32(189, 107, 153, 200); // color rosado
         colorActivarArFlecha = new Color32(133, 133, 133, 30); // color negro transparente
         textActivarAr = Color.white;

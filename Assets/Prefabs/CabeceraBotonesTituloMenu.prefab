@@ -299,6 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6850025420347348737}
   - component: {fileID: 2561289317195063450}
+  - component: {fileID: 5348012540740603918}
   m_Layer: 5
   m_Name: CabeceraBotonesTituloMenu
   m_TagString: Untagged
@@ -337,6 +338,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9659768ab1a4b48469481e59e58dc7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5348012540740603918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850025420347348750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6850025420494918405
@@ -610,10 +623,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2561289317195063450}
-        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
-        m_MethodName: switchScene
-        m_Mode: 3
+      - m_Target: {fileID: 5348012540740603918}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: openMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
