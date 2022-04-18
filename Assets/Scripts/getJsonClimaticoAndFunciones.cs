@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -21,7 +22,7 @@ namespace DefaultNamespace
         private Uri url;
         public GameObject imgGameObject;
         public TextMeshProUGUI textMeshProObject;
-        public GameObject videoCarga;
+        public GameObject imgCarga;
         public string idioma;
         // called zero
         void Awake()
@@ -47,12 +48,8 @@ namespace DefaultNamespace
                 Lenguage.idioma = "es";
             }
             //TODO descomentar linea videoCarga
-            //videoCarga.SetActive(false);
-            
                 StartCoroutine(makeRequest());
                 StartCoroutine(makeRequestImage());
-                //videoCarga.SetActive(true);
-           
         }
 
         [RuntimeInitializeOnLoadMethod]
@@ -125,6 +122,7 @@ namespace DefaultNamespace
                 imgGameObject.SetActive(true);
                 imagen.SetAllDirty();
             }
+            imgCarga.SetActive(false);
         }
     }
 }

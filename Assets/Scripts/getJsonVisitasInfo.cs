@@ -23,7 +23,7 @@ namespace DefaultNamespace
         public TextMeshProUGUI textDescripcion;
         //public TextMeshProUGUI textSaludo;
         public Text titulo;
-        //public GameObject videoCarga;
+        public GameObject imgCarga;
         private string extra;
         private string slug;
         private String id_parada;
@@ -124,6 +124,7 @@ namespace DefaultNamespace
                 imgGameObject.SetActive(true);
                 imagen.SetAllDirty();
             }
+            imgCarga.SetActive(false);
         }
     }
 }
