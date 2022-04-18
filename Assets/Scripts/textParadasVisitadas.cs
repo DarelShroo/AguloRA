@@ -14,13 +14,6 @@ public class textParadasVisitadas : MonoBehaviour
     private int nParadasVisitadas = -1;
 
     private int nMasParada = 0;
-    // Start is called before the first frame update
-
-    void Start()
-    {
-        
-    }
-    
 
     // Update is called once per frame
     void Update()
@@ -38,6 +31,7 @@ public class textParadasVisitadas : MonoBehaviour
             }
             catch (Exception e)
             {
+                Debug.Log(e.Message);
             }
         
     }

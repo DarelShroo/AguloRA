@@ -14,15 +14,26 @@ namespace DefaultNamespace
     public class getJsonClimaticoAndFunciones : MonoBehaviour
     {
         private string descripcion;
+        
+        [SerializeField]
         public RawImage imagen;
+        
         private Texture texture;
         private string img_url;
         private Uri urlClimatico = new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-climatico?lang=");
         private Uri urlFunciones= new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-funciones?lang=");
         private Uri url;
+        
+        [SerializeField]
         public GameObject imgGameObject;
+        
+        [SerializeField]
         public TextMeshProUGUI textMeshProObject;
+        
+        [SerializeField]
         public GameObject imgCarga;
+        
+        [SerializeField]
         public string idioma;
         // called zero
         void Awake()
@@ -34,22 +45,11 @@ namespace DefaultNamespace
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
-            if (SceneManager.GetActiveScene().buildIndex == 4 )
-            {
-                url = urlClimatico;
-            }
-            else
-            {
-                url = urlFunciones;
-            }
-            
-            if (Lenguage.idioma == null)
-            {
-                Lenguage.idioma = "es";
-            }
-            //TODO descomentar linea videoCarga
-                StartCoroutine(makeRequest());
-                StartCoroutine(makeRequestImage());
+            url = SceneManager.GetActiveScene().buildIndex == 4 ? urlClimatico : urlFunciones;
+            Lenguage.idioma = (Lenguage.idioma == null) ? "es" : Lenguage.idioma;
+      
+            StartCoroutine(makeRequest());
+            StartCoroutine(makeRequestImage());
         }
 
         [RuntimeInitializeOnLoadMethod]
@@ -99,12 +99,10 @@ namespace DefaultNamespace
                               "ltr" + '"' + " data-placeholder=" + '"' + "Traducción" + '"' + ">");
                     textMeshProObject.text = descripcion;
                     img_url = cambio_climatico.imagen;
-                
-            }
+                }
            
         }
         [RuntimeInitializeOnLoadMethod]
-
         IEnumerator makeRequestImage()
         {
             yield return new WaitForSeconds(2);
@@ -121,8 +119,8 @@ namespace DefaultNamespace
                 imagen.texture = texture;
                 imgGameObject.SetActive(true);
                 imagen.SetAllDirty();
+                imgCarga.SetActive(false);
             }
-            imgCarga.SetActive(false);
         }
     }
 }

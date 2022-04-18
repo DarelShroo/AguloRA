@@ -22,9 +22,9 @@ namespace Mapbox.Examples
 		[SerializeField]
 		AbstractMap _map;
 
-		[SerializeField]
 		//[Geocode]
 		//string[] _locationStrings;
+		[SerializeField]
 		Vector2d[] _locations;
 
 		//[SerializeField]
@@ -33,13 +33,25 @@ namespace Mapbox.Examples
 		[SerializeField]
 		GameObject _markerPrefab;
 
+		[SerializeField]
 		List<GameObject> _spawnedObjects;
-
+		
+		[SerializeField]
 		public Material lugares;
+		
+		[SerializeField]
 		public Material personajes;
+		
+		[SerializeField]
 		public Material arquitectura;
+		
+		[SerializeField]
 		public Material historiaaborigen;
+		
+		[SerializeField]
 		public Material tradiciones;
+		
+		[SerializeField]
 		public Material visitado;
 		void Start()
 		{
@@ -54,7 +66,7 @@ namespace Mapbox.Examples
 			{
 				File.Create(path);
 			}
-			
+
 			var lineas = File.ReadLines(path);
 			var enumerable = lineas.ToList();
 			
@@ -89,10 +101,6 @@ namespace Mapbox.Examples
 							comprueba(enumerable, cube, p.Nombre, tradiciones);
 							break;
 					}
-
-					//instance.AddComponent<Button>();
-					//instance.GetComponent<Button>().onClick.AddListener(delegate {   SceneManager.LoadScene(1);
- //});
 					//instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 					_spawnedObjects.Add(instance);
 				}
@@ -116,8 +124,6 @@ namespace Mapbox.Examples
 
 		private void comprueba(List<string> enumerable, Transform cube, string nombre, Material material)
 		{
-			Debug.Log("el nombre es -> " +nombre);
-			
 			if (enumerable.Contains(nombre))
 			{
 				cube.GetComponent<MeshRenderer>().material = visitado;

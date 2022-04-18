@@ -28,17 +28,7 @@ public class SelectParada : MonoBehaviour
     
     public void addOrRemoveParada()
     {
-        if (Lenguage.idioma == null)
-        {
-            Lenguage.idioma = "es";
-        }
-
-        //TODO descomentar linea videoCarga
-        //videoCarga.SetActive(false);
-        
-    
-
-        //videoCarga.SetActive(true);
+        Lenguage.idioma = (Lenguage.idioma == null) ? "es" : Lenguage.idioma;
     }
 
     public void paradasAmostrar()

@@ -1,23 +1,23 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
-using Newtonsoft.Json;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DownloadImgPrimaryScene : MonoBehaviour
 {
     // Start is called before the first frame update
-     private string descripcion;
+        private string descripcion;
+        
+        [SerializeField]
         public RawImage imagen;
+        
         private Texture texture;
         private string img_url;
+        
+        [SerializeField]
         public GameObject imgGameObject;
 
+        [SerializeField]
         public string idioma;
         // called zero
         void Awake()

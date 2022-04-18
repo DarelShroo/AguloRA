@@ -6,28 +6,39 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
 using TMPro;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-
 
 namespace DefaultNamespace
 {
     public class getJsonVisitasInfo : MonoBehaviour
     {
         private string descripcion;
+        
+        [SerializeField]
         public RawImage imagen;
+        
         private Texture texture;
         private string img_url;
         private Uri url = new  Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-paradas?lang=");
+        
+        [SerializeField]
         public GameObject imgGameObject;
+        
+        [SerializeField]
         public TextMeshProUGUI textDescripcion;
-        //public TextMeshProUGUI textSaludo;
+        
+        [SerializeField]
         public Text titulo;
+        
+        [SerializeField]
         public GameObject imgCarga;
+        
         private string extra;
         private string slug;
         private String id_parada;
+        
+        [SerializeField]
         public string idioma;
+        
         // called zero
         void Awake()
         {
@@ -38,18 +49,10 @@ namespace DefaultNamespace
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
-            if (Lenguage.idioma == null)
-            {
-                Lenguage.idioma = "es";
-            }
-            //TODO descomentar linea videoCarga
-            
-            //videoCarga.SetActive(false);
+            Lenguage.idioma = (Lenguage.idioma == null) ? "es" : Lenguage.idioma;
+
             StartCoroutine(makeRequest());
             StartCoroutine(makeRequestImage());
-            //videoCarga.SetActive(true);
-            
-     
         }
 
         [RuntimeInitializeOnLoadMethod]
@@ -65,9 +68,6 @@ namespace DefaultNamespace
             }
             else
             {
-                
-                
-                
                 var json =
                     JsonConvert.DeserializeObject<List<ObjectInfoParada>>(request.downloadHandler.text);
 
@@ -97,9 +97,6 @@ namespace DefaultNamespace
                             .Replace("</span>", "</font-weight>");
                         textDescripcion.text = descripcion;
                         titulo.text = data.titulo;
-                        // textSaludo.text = json[0].saludo;
-                        // slug = json[0].slug;
-                        // id_parada = json[0].id_parada;
                         img_url = data.imagen;
                     }
                 }
@@ -123,8 +120,8 @@ namespace DefaultNamespace
                 imagen.texture = texture;
                 imgGameObject.SetActive(true);
                 imagen.SetAllDirty();
+                imgCarga.SetActive(false);
             }
-            imgCarga.SetActive(false);
         }
     }
 }

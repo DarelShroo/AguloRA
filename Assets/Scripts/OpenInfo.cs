@@ -38,10 +38,6 @@ public class OpenInfo : MonoBehaviour
         colorActivarArFlecha = new Color32(133, 133, 133, 30); // color negro transparente
         textActivarAr = Color.white;
     }
-    public void Update()
-    {
-  
-    }
 
     public static string Name
     {
