@@ -16,15 +16,29 @@ public class CheckStateTracking : MonoBehaviour
         try
         {
             string path = Application.persistentDataPath + "/paradasVisitadas.txt";
-
+            
+            if (!File.Exists(path))
+            {
+                File.Create(path);
+            }
+            
             if (objeto.activeSelf && objeto.name == OpenInfo.name.Replace("\n", ""))
             {
                 var lineas = File.ReadLines(path);
-                var enumerable1 = lineas as string[] ?? lineas.ToArray();
-                var enumerable = enumerable1.ToList();
-                if (!enumerable.Contains(objeto.name)) ;
+                var enumerable = lineas as string[] ?? lineas.ToArray();
+                
+                bool existe = false;
+                foreach (var parada in enumerable)
                 {
-                    File.WriteAllText(path, getText(enumerable1) + objeto.name + "\n");
+                    if (parada == objeto.name)
+                    {
+                        existe = true;
+                    }
+                }
+
+                if (!existe)
+                {
+                    File.WriteAllText(path, getText(enumerable) + objeto.name + "\n");
                 }
             }
         }
@@ -33,7 +47,7 @@ public class CheckStateTracking : MonoBehaviour
             Debug.Log(e.Message);
         }
     }
-
+    
     private string getText(IEnumerable<string> lineas)
     {
         string text = "";

@@ -66,7 +66,7 @@ namespace Mapbox.Examples
 			{
 				File.Create(path);
 			}
-
+			
 			var lineas = File.ReadLines(path);
 			var enumerable = lineas.ToList();
 			
@@ -84,23 +84,24 @@ namespace Mapbox.Examples
 					var cube = canvas.GetChild(0);
 					
 					switch (p.Tipo)
-					{
-						case "lugares":
-							comprueba(enumerable, cube, p.Nombre, lugares);
-							break;
-						case "personajes":
-							comprueba(enumerable, cube, p.Nombre, personajes);
-							break;
-						case "arquitectura":
-							comprueba(enumerable, cube, p.Nombre, arquitectura);
-							break;
-						case "historiaaborigen":
-							comprueba(enumerable, cube, p.Nombre, historiaaborigen);
-							break;
-						case "tradiciones": 
-							comprueba(enumerable, cube, p.Nombre, tradiciones);
-							break;
-					}
+						{
+							case "lugares":
+								comprueba(enumerable, cube, p.Nombre, lugares);
+								break;
+							case "personajes":
+								comprueba(enumerable, cube, p.Nombre, personajes);
+								break;
+							case "arquitectura":
+								comprueba(enumerable, cube, p.Nombre, arquitectura);
+								break;
+							case "historiaaborigen":
+								comprueba(enumerable, cube, p.Nombre, historiaaborigen);
+								break;
+							case "tradiciones":
+								comprueba(enumerable, cube, p.Nombre, tradiciones);
+								break;
+						}
+
 					//instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 					_spawnedObjects.Add(instance);
 				}

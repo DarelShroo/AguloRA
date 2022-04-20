@@ -36,7 +36,6 @@ public class SelectParada : MonoBehaviour
         foreach (var parada in Paradas.instance.listaParadas)
         {
             Parada p = (Parada) parada;
-            Debug.Log(p.Tipo);
             if (Paradas.active.Contains(p.Tipo.ToLower()))
             {
                 p.Visible = true;

@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 484372527}
   - component: {fileID: 484372526}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textVisitas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 501551724}
   - component: {fileID: 501551723}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textCambioClimatico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1233,7 +1233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.0056762695, y: -365}
+  m_AnchoredPosition: {x: 0.0056152344, y: -365}
   m_SizeDelta: {x: 0, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127596119
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1135435998}
   - component: {fileID: 1135435997}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textIdioma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1395,7 +1395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.0056762695, y: 382.89996}
+  m_AnchoredPosition: {x: 0.0056152344, y: 382.89996}
   m_SizeDelta: {x: 0.0000024437904, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153868139
@@ -1411,14 +1411,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.080822706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: a08ddee26836eec45801ce3fa163f564, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1717,6 +1717,7 @@ GameObject:
   - component: {fileID: 1349331664}
   - component: {fileID: 1349331663}
   - component: {fileID: 1349331662}
+  - component: {fileID: 1349331667}
   m_Layer: 5
   m_Name: PrimarySceneCanvas
   m_TagString: Untagged
@@ -1819,6 +1820,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1349331667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349331661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ddd5b5915a3cc488ea9e1c52343934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textVisitas: {fileID: 484372526}
+  textCambioCli: {fileID: 501551723}
+  textAppFunc: {fileID: 1755433112}
+  textApoyoIns: {fileID: 1744463842}
+  textIdioma: {fileID: 1135435997}
 --- !u!1 &1481012722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,7 +2228,7 @@ GameObject:
   - component: {fileID: 1744463843}
   - component: {fileID: 1744463842}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textApoyoInstitucional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2289,7 +2307,7 @@ GameObject:
   - component: {fileID: 1755433113}
   - component: {fileID: 1755433112}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textAppFunc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2389,7 +2407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75.035}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2001709462

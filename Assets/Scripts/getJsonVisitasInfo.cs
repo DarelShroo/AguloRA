@@ -75,8 +75,6 @@ namespace DefaultNamespace
                 {
                     if (data.titulo.Equals(OpenInfo.name.Replace("\n", "")))
                     {
-                        Debug.Log(("valor open info -> "+name.Replace("\n", "")));
-                        Debug.Log(("valor original -> " +data.titulo));
                         descripcion = data.descripcion
                             .Replace("<p>", "")
                             .Replace("</p>", "")
@@ -94,7 +92,8 @@ namespace DefaultNamespace
                             .Replace("<span class="+'"'+"Y2IQFc"+'"'+ " lang="+'"'+"en"+'"'+">","<font-weight=400>")
                             .Replace("<span style="+'"'+"font-weight: 400;"+'"'+">", "<font-weight=400>")
                             .Replace("<li style="+'"'+"font-weight: 400;"+'"' +" aria-level="+'"'+"1"+'"'+">", "* <line-height=120%><font-weight=400>")
-                            .Replace("</span>", "</font-weight>");
+                            .Replace("</span>", "</font-weight>")
+                            .Replace("<p style="+'"'+"text-align: center;"+'"'+">","<align=center>");
                         textDescripcion.text = descripcion;
                         titulo.text = data.titulo;
                         img_url = data.imagen;

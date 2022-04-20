@@ -17,6 +17,8 @@ namespace DefaultNamespace
         
         [SerializeField]
         public RawImage imagen;
+
+        public Text textBanner;
         
         private Texture texture;
         private string img_url;
@@ -36,6 +38,20 @@ namespace DefaultNamespace
         [SerializeField]
         public string idioma;
         // called zero
+
+        private string[] bannerClimatico = new[]
+        {
+            "CAMBIO CLIMATICO",
+            "CLIMATE CHANGE",
+            "KLIMAWANDEL"
+        }; 
+        
+        private string[] bannerAppFunciones = new[]
+        {
+            "APP Y FUNCIONES",
+            "APP AND FUNCTION",
+            "APP UND FUNKTIONEN"
+        }; 
         void Awake()
         {
             getTextCambioClimatico();
@@ -45,9 +61,13 @@ namespace DefaultNamespace
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
-            url = SceneManager.GetActiveScene().buildIndex == 4 ? urlClimatico : urlFunciones;
+            int nEscena = SceneManager.GetActiveScene().buildIndex;
+            url = nEscena == 4 ? urlClimatico : urlFunciones;
             Lenguage.idioma = (Lenguage.idioma == null) ? "es" : Lenguage.idioma;
-      
+            int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
+
+            textBanner.text = nEscena == 4 ? bannerClimatico[posIdioma] : bannerAppFunciones[posIdioma];
+            
             StartCoroutine(makeRequest());
             StartCoroutine(makeRequestImage());
         }

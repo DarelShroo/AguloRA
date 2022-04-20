@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagen: {fileID: 4890088966868440508}
+  textBanner: {fileID: 1085663567}
   imgGameObject: {fileID: 4890088966868440483}
   textMeshProObject: {fileID: 4890088967318423040}
   imgCarga: {fileID: 1426648094}
@@ -587,6 +588,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6850025420250724874, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_Name
+      value: textBanner
+      objectReference: {fileID: 0}
     - target: {fileID: 6850025420250724876, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
       propertyPath: m_Text
       value: APP Y FUNCIONES
@@ -701,6 +706,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+--- !u!114 &1085663567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850025420250724876, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+  m_PrefabInstance: {fileID: 1085663566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1426648094 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4331666260779001656, guid: 7769143e8841d44489aa3e2db80110a8, type: 3}
@@ -1366,7 +1382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 268.32816, y: 0}
+  m_AnchoredPosition: {x: 241.61618, y: 0}
   m_SizeDelta: {x: 535.7416, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4890088968085705443

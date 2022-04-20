@@ -30,11 +30,6 @@ public class CheckboxsState : MonoBehaviour
     private  GameObject iniciarVisita;
 
     private bool iniciado = false;
-    public void Update()
-    {
-        Debug.Log("valor clase checkbos lugares ->  " + lugares);
-    }
-
     public void Awake()
     {
         if (instance == null)
