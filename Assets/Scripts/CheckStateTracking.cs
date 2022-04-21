@@ -115,6 +115,9 @@ public class CheckStateTracking : MonoBehaviour
                         vid.url = urlVideo;
                         vid.audioOutputMode = VideoAudioOutputMode.AudioSource;
                         vid.EnableAudioTrack (0, true);
+                        vid.SetDirectAudioVolume(0, 1);
+                        vid.SetDirectAudioMute(0,false);
+                        vid.audioOutputMode = VideoAudioOutputMode.Direct;
                         vid.Prepare ();
 
                         if (!existe)
