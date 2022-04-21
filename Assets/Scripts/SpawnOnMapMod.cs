@@ -125,6 +125,7 @@ namespace Mapbox.Examples
 
 		private void comprueba(List<string> enumerable, Transform cube, string nombre, Material material)
 		{
+			
 			if (enumerable.Contains(nombre))
 			{
 				cube.GetComponent<MeshRenderer>().material = visitado;
