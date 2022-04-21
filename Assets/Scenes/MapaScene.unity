@@ -1002,6 +1002,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &903827087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850025420250724876, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+  m_PrefabInstance: {fileID: 903827084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1121211761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1084,7 @@ GameObject:
   - component: {fileID: 1167588177}
   - component: {fileID: 1167588176}
   - component: {fileID: 1167588181}
+  - component: {fileID: 1167588182}
   m_Layer: 5
   m_Name: MapaScene
   m_TagString: Untagged
@@ -1186,6 +1198,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c3e226779424f49bb4a66eedb2c6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1167588182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167588175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab9ae35d5ce922418a0151fc1d9325d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBanner: {fileID: 903827087}
+  textClickParada: {fileID: 1573850788}
+  textActivarAr: {fileID: 1824531293}
 --- !u!1 &1188978833
 GameObject:
   m_ObjectHideFlags: 0

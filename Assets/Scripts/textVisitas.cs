@@ -76,5 +76,15 @@ public class textVisitas : MonoBehaviour
         textHistoriaAb.text = historiaAb[posIdioma].ToUpper();
         textTradiciones.text  = tradiciones[posIdioma].ToUpper();
         textIniciarVisitas.text = iniciarVisitas[posIdioma];
+
+
+        if (idioma == "de")
+        {
+            textLugares.fontSize = 14;
+            textPersonajes.fontSize = 14;
+            textArquitectura.fontSize = 14;
+            textHistoriaAb.fontSize = 14;
+            textTradiciones.fontSize  = 14;
+        }
     }
 }

@@ -21,7 +21,6 @@ public class CheckStateTracking : MonoBehaviour
     private  VideoPlayer vid ;
 
     private string urlVideo = "";
-    public Text text;
     void Start()
     {
 

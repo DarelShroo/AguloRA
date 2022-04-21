@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,5 +63,14 @@ public class textPrimaryScene : MonoBehaviour
         textAppFunc.text = appFunc[posIdioma];
         textApoyoIns.text = apoyoIns[posIdioma];
         textIdioma.text = idiomas[posIdioma];
+
+        if (idioma == "de")
+        {
+            textVisitas.fontSize =14;
+            textCambioCli.fontSize = 14;
+            textAppFunc.fontSize = 14;
+            textApoyoIns.fontSize = 14;
+            textIdioma.fontSize = 14;
+        }
     }
 }
