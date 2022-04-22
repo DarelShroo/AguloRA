@@ -117,9 +117,10 @@ public class CheckStateTracking : MonoBehaviour
                         vid.EnableAudioTrack (0, true);
                         vid.SetDirectAudioVolume(0, 1);
                         vid.SetDirectAudioMute(0,false);
+                        vid.controlledAudioTrackCount = 1;
                         vid.audioOutputMode = VideoAudioOutputMode.Direct;
-                        vid.Prepare ();
-
+                        vid.Prepare();
+                        vid.Play();
                         if (!existe)
                         {
                             File.WriteAllText(path, getText(enumerable) + objeto.name + "\n");
