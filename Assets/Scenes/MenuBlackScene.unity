@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 229344846}
   - component: {fileID: 229344845}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textLegal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -396,7 +396,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 586527551}
   - component: {fileID: 586527550}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textVisitas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 595023033}
   - component: {fileID: 595023032}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textApoyoIns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1243,7 +1243,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1261,6 +1261,8 @@ GameObject:
   - component: {fileID: 1164868828}
   - component: {fileID: 1164868827}
   - component: {fileID: 1164868831}
+  - component: {fileID: 1164868832}
+  - component: {fileID: 1164868833}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1369,6 +1371,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659768ab1a4b48469481e59e58dc7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1164868832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164868826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb8920eff1b38548b9d3da707d915ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1164868833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164868826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329c7ac5b38d6a84683fc2fdda948246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visitas: {fileID: 586527550}
+  cambioCli: {fileID: 1550594528}
+  appFunc: {fileID: 1764071067}
+  apoyoIns: {fileID: 595023032}
+  idiomas: {fileID: 1417987466}
+  legal: {fileID: 229344845}
 --- !u!1 &1256527127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1529,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1623,16 +1655,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1164868826}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1164868832}
+        m_TargetAssemblyTypeName: OpenLink, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://eadmin.agulo.org/publico/contenido/AVPRIVACID
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1350385086
@@ -1722,7 +1754,7 @@ GameObject:
   - component: {fileID: 1417987467}
   - component: {fileID: 1417987466}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textIdiomas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1806,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1876,7 +1908,7 @@ GameObject:
   - component: {fileID: 1550594529}
   - component: {fileID: 1550594528}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textCambioCli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1928,7 +1960,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1955,7 +1987,7 @@ GameObject:
   - component: {fileID: 1764071068}
   - component: {fileID: 1764071067}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textAppFunc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2007,7 +2039,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
