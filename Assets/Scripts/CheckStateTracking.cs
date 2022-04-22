@@ -113,6 +113,9 @@ public class CheckStateTracking : MonoBehaviour
                         
                         vid = objeto.transform.Find("Quad").gameObject.GetComponent<VideoPlayer>();
                         vid.url = urlVideo;
+
+                        vid.transform.localScale = new Vector3(1.7f,1f,1f);
+                        vid.aspectRatio = VideoAspectRatio.FitVertically;
                         vid.audioOutputMode = VideoAudioOutputMode.AudioSource;
                         vid.EnableAudioTrack (0, true);
                         vid.SetDirectAudioVolume(0, 1);
