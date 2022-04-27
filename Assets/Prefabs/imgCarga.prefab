@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4331666260779001657}
   - component: {fileID: 4331666260779001663}
   - component: {fileID: 4331666260779001662}
+  - component: {fileID: 6638922941517987457}
   m_Layer: 5
   m_Name: imgCarga
   m_TagString: Untagged
@@ -155,6 +156,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6638922941517987457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331666260779001656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77910f9d5a4c5d44d8bfc7193fc8404e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cargando: {fileID: 4331666260699876998}
 --- !u!1 &4331666261112010260
 GameObject:
   m_ObjectHideFlags: 0

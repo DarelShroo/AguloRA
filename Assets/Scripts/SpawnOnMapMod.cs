@@ -1,19 +1,11 @@
-using System;
-using System.Collections;
 using System.IO;
 using System.Linq;
-using System.Threading;
-using UnityEditor;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Mapbox.Examples
 {
 	using UnityEngine;
 	using Mapbox.Utils;
 	using Mapbox.Unity.Map;
-	using Mapbox.Unity.MeshGeneration.Factories;
 	using Mapbox.Unity.Utilities;
 	using System.Collections.Generic;
 
@@ -53,6 +45,8 @@ namespace Mapbox.Examples
 		
 		[SerializeField]
 		public Material visitado;
+
+		public GameObject imgCarga;
 		void Start()
 		{
 			Parada p = new Parada();
@@ -146,6 +140,7 @@ namespace Mapbox.Examples
 				spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
 				//spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 			}
+			imgCarga.SetActive(false);
 		}
 	}
 }

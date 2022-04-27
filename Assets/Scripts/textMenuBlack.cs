@@ -48,7 +48,7 @@ public class textMenuBlack : MonoBehaviour
     private string[] textIdiomas =
     {
         "idiomas",
-        "lenguages",
+        "Languages",
         "Sprachen"
     };
     

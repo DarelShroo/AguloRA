@@ -34,11 +34,16 @@ public class textParadasVisitadas : MonoBehaviour
     
 
     // Update is called once per frame
-    void Start()
+    void Update()
     {
         try
         {
             string path = Application.persistentDataPath + "/paradasVisitadas.txt";
+            if (!File.Exists(path))
+            {
+                File.Create(path);
+            }
+
             text.text = textParada(Lenguage.idioma, nParadas(path));
         }
         catch (Exception e)
@@ -49,7 +54,7 @@ public class textParadasVisitadas : MonoBehaviour
 
     private string textParada(string leng, int n)
     {
-        int posArraytext = n < 6 ? 0 : (n < 10 && n >= 6) ? 1 : (n < 15 && n >= 10) ? 2 : n == 15 ? 3 : 0;
+        int posArraytext = n <= 6 ? 0 : (n <= 10) ? 1 : (n < 15 ) ? 2 : n == 15 ? 3 : 0;
         string text = "";
 
         if (Lenguage.idioma == null)

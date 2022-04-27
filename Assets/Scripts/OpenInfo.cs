@@ -1,19 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Mapbox.Unity;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OpenInfo : MonoBehaviour
 { 
-    public static string name = "Clica sobre una parada ...";
-
+    public static string name = "";
+    
     public static Color32 colorActivarAr;
     public static Color32 colorActivarArFlecha;
     public static Color32 textActivarAr = Color.gray;
     public static OpenInfo instance;
+    public static string nombreAnterior;
+    public static bool mostrado;
+    public static bool cambioIdioma;
     
+
     private void Awake()
     {
         if (instance == null)
@@ -30,7 +29,11 @@ public class OpenInfo : MonoBehaviour
         }
     }
 
-    
+    public void Start()
+    {
+    }
+
+
     public void getNameParada(GameObject getNameParada)
     {
         name = getNameParada.GetComponent<TextMesh>().text;
@@ -39,6 +42,10 @@ public class OpenInfo : MonoBehaviour
         textActivarAr = Color.white;
     }
 
+    public void Update()
+    {
+        
+    }
     public static string Name
     {
         get => name;

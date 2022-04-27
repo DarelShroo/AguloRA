@@ -63,7 +63,6 @@ public class textVisitas : MonoBehaviour
         "Start Besuch"
     };
     
-    // Start is called before the first frame update
     void Start()
     {
         string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;

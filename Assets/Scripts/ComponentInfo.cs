@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ComponentInfo : MonoBehaviour
@@ -16,7 +17,21 @@ public class ComponentInfo : MonoBehaviour
     
     [SerializeField]
     public Text textName;
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (instance != this)
+            {
+                //Destroy(gameObject);
+            }
+        }
+    }
     public static ComponentInfo Instance
     {
         get => instance;
@@ -40,11 +55,20 @@ public class ComponentInfo : MonoBehaviour
         get => textName;
         set => textName = value;
     }
-
+    
+    private string[] clickParada = new []
+    {
+        "Clica sobre una Parada ...",
+        "Click on a stop ...",
+        "Klicken Sie auf eine Haltestelle ..."
+    };
+    
     private void Update()
     {
         bannerAr.color = OpenInfo.colorActivarAr; // Color banner
-        textName.text = OpenInfo.name.Replace("\n", "");
+        textName.text = OpenInfo.Name.Replace("\n","") != "" ?
+            OpenInfo.Name.Replace("\n",""):
+            clickParada[Lenguage.posIdioma];
         textActivarAr.color = OpenInfo.textActivarAr;
     }
 }

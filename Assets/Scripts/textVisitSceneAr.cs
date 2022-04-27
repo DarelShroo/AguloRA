@@ -5,12 +5,29 @@ using UnityEngine.UI;
 
 public class textVisitSceneAr : MonoBehaviour
 {
-    public Text textBanner;
-    private string[] banner = new []
+    public Text banner;
+    public Text mapa;
+    public Text info;
+    
+    private string[] textBanner = new []
     {
         "Visitas",
         "Visit",
         "Besuchen Sie"
+    };
+
+    private string[] textMapa =
+    {
+        "MAPA",
+        "MAP",
+        "KARTE"
+    };
+
+    private string[] textInfo =
+    {
+        "INFORMACIÓN",
+        "INFORMATION",
+        "INFORMATIONEN"
     };
     // Start is called before the first frame update
     void Start()
@@ -18,12 +35,8 @@ public class textVisitSceneAr : MonoBehaviour
         string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
         int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
         
-        textBanner.text = banner[posIdioma].ToUpper();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        banner.text = textBanner[posIdioma].ToUpper();
+        mapa.text = textMapa[posIdioma].ToUpper();
+        info.text = textInfo[posIdioma].ToUpper();
     }
 }

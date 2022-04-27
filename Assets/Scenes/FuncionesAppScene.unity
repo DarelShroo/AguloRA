@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 135322934}
   - component: {fileID: 135322938}
   - component: {fileID: 135322933}
+  - component: {fileID: 135322939}
   m_Layer: 5
   m_Name: FuncionesAppCanvas
   m_TagString: Untagged
@@ -352,6 +353,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &135322939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135322932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c74bd2d16fd5404d836e4ba5f945c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtAppFunc: {fileID: 1085663567}
 --- !u!1001 &357185689
 PrefabInstance:
   m_ObjectHideFlags: 0

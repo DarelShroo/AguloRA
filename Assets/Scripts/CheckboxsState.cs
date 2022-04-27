@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CheckboxsState : MonoBehaviour
 {
+    //Esta clase es un molde que contiene los valores booleanos
+    //de los checkboxs contenidos en visitScene
+    
     public static CheckboxsState instance;
     
     private static bool  lugares;
@@ -21,17 +19,12 @@ public class CheckboxsState : MonoBehaviour
 
     private static string nameInfo;
 
-    public static string NameInfo
-    {
-        get => nameInfo;
-        set => nameInfo = value;
-    }
-
     private  GameObject iniciarVisita;
 
     private bool iniciado = false;
     public void Awake()
     {
+        //Nos quedamos con el objeto original y destruimos todas las copias
         if (instance == null)
         {
             instance = this;
@@ -44,6 +37,12 @@ public class CheckboxsState : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    
+    public static string NameInfo
+    {
+        get => nameInfo;
+        set => nameInfo = value;
     }
 
     public bool Lugares

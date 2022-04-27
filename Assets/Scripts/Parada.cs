@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Parada : MonoBehaviour
+public class Parada
 {
     private string nombre;
     private string coordenadas;

@@ -86,5 +86,10 @@ public class textApoyoInstitucional : MonoBehaviour
        textTitpromotor.text = promotor[posIdioma];
        textTitfinanciadores.text = financiadores[posIdioma];
        textFi.text = textFinal[posIdioma];
+
+       if (idioma == "de")
+       {
+           textBanner.fontSize = 14;
+       }
     }
 }

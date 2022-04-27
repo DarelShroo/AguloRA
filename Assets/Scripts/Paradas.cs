@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Paradas : MonoBehaviour
@@ -9,6 +8,36 @@ public class Paradas : MonoBehaviour
     private ArrayList paradas = new ArrayList();
 
     public static ArrayList active = new ArrayList();
+
+    private string[] nombreParadasEs =
+    {
+        "El Chorro (La Vica)",
+        "Campo de fútbol (Antiguas plataneras)",
+        "Cesarina Bento",
+        "Leoncio Bento",
+        "Casa de Pedro Sánchez Padilla",
+        "Casa de los Hermanos Bethencourt",
+        "Félix Herrera Cabello",
+        "Filiichristi",
+        "El Pescante (El Transportador)",
+        "Acequia Pérez",
+        "Casa del pintor José Aguiar",
+        "Las Hogueras de San Marcos",
+        "Los Piques",
+        "Casa natal Antonio Jesús Trujillo Armas",
+        "Cueva aborigen"
+    };
+    
+    private string[] nombreParadasEn=
+    {
+     ""   
+    };
+    
+    private string[] nombreParadasDe=
+    {
+        
+    };
+
     
     private Paradas()
     {

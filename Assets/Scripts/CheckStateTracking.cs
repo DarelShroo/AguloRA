@@ -3,29 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DefaultNamespace;
-using easyar;
 using Mapbox.Json;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
 using UnityEngine.Video;
-using JsonSerializer = Newtonsoft.Json.JsonSerializer;
-using Object = System.Object;
 using VideoPlayer = UnityEngine.Video.VideoPlayer;
 
 public class CheckStateTracking : MonoBehaviour
 {
+    //Esta clase se encarga de comprobar continuamente el estado del tracking de la imágen para AR
+    //Evita que muestre en AR el contenido de la parada equivocada.
+    //Se encarga de traer los videos del gestor de contenidos.
     [SerializeField]
-    public GameObject[] objetos; 
+    public GameObject[] objetos;
+    
     private  VideoPlayer vid ;
-
     private string urlVideo = "";
-    void Start()
-    {
-
-    }
-
     public void Awake()
     {
         StartCoroutine(makeRequest());
@@ -37,10 +30,37 @@ public class CheckStateTracking : MonoBehaviour
         {
             foreach (var objeto in objetos)
             {
-
+                //Busca el objeto que está tratando de hacer visible en la ventana de visitSceneAr
                 if (objeto.activeSelf && objeto.name == OpenInfo.name.Replace("\n", ""))
                 {
+                    //Si el objeto está activo y su nombre es el mismo que el de OpenInfo.name entonces entrará aquí haciendol
                     objeto.transform.Find("Quad").gameObject.SetActive(true);
+                    if (objeto.transform.Find("Quad").GetChild(0).name == "anim")
+                    {
+                        string path = Application.persistentDataPath + "/paradasVisitadas.txt";
+            
+                        if (!File.Exists(path))
+                        {
+                            File.Create(path);
+                        }
+                        
+                        var lineas = File.ReadLines(path);
+                        var enumerable = lineas as string[] ?? lineas.ToArray();
+
+                        bool existe = false;
+                        foreach (var parada in enumerable)
+                        {
+                            if (parada == objeto.name.Replace("\n",""))
+                            {
+                                existe = true;
+                            }
+                        }
+                        
+                        if (!existe)
+                        {
+                            File.WriteAllText(path, getText(enumerable) + objeto.name.Replace("\n","") + "\n");
+                        } 
+                    }
                 }
                 else
                 {
@@ -58,9 +78,7 @@ public class CheckStateTracking : MonoBehaviour
             string url = "https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-modelos"; 
             UnityWebRequest request = UnityWebRequest.Get(url);
             yield return request.SendWebRequest();
-
             
-           
             if (request.result != UnityWebRequest.Result.Success)
                 {
                     Debug.Log(request.error);
@@ -79,10 +97,6 @@ public class CheckStateTracking : MonoBehaviour
 
                                 urlVideo = objectVid.video;
                             }
-                            else
-                            {
-                                
-                            }
                         }
                     }
                 }
@@ -94,10 +108,9 @@ public class CheckStateTracking : MonoBehaviour
                 {
                     File.Create(path);
                 }
-
                 foreach (var objeto in objetos)
                 {
-                    if (objeto.name.Equals(OpenInfo.name.Replace("\n", "")))
+                    if (objeto.name.Replace("\n","").Equals(OpenInfo.name.Replace("\n", "")))
                     {
                         var lineas = File.ReadLines(path);
                         var enumerable = lineas as string[] ?? lineas.ToArray();
@@ -105,7 +118,7 @@ public class CheckStateTracking : MonoBehaviour
                         bool existe = false;
                         foreach (var parada in enumerable)
                         {
-                            if (parada == objeto.name)
+                            if (parada == objeto.name.Replace("\n",""))
                             {
                                 existe = true;
                             }
@@ -114,7 +127,7 @@ public class CheckStateTracking : MonoBehaviour
                         vid = objeto.transform.Find("Quad").gameObject.GetComponent<VideoPlayer>();
                         vid.url = urlVideo;
 
-                        vid.transform.localScale = new Vector3(1.7f,1f,1f);
+                        vid.transform.localScale = new Vector3(3f,3.2f,3f);
                         vid.aspectRatio = VideoAspectRatio.FitVertically;
                         vid.audioOutputMode = VideoAudioOutputMode.AudioSource;
                         vid.EnableAudioTrack (0, true);
@@ -126,12 +139,11 @@ public class CheckStateTracking : MonoBehaviour
                         vid.Play();
                         if (!existe)
                         {
-                            File.WriteAllText(path, getText(enumerable) + objeto.name + "\n");
+                            File.WriteAllText(path, getText(enumerable) + objeto.name.Replace("\n","") + "\n");
                         } 
                     }
 
-              
-                } 
+                }
             }
             catch (Exception e)
             {

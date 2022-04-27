@@ -73,7 +73,7 @@ namespace DefaultNamespace
 
                 foreach (var data in json)
                 {
-                    if (data.titulo.Equals(OpenInfo.name.Replace("\n", "")))
+                    if (data.titulo.Replace(" ", "").Equals(OpenInfo.name.Replace("\n", "").Replace(" ","")))
                     {
                         descripcion = data.descripcion
                             .Replace("<p>", "")

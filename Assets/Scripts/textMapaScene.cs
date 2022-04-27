@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class textMapaScene : MonoBehaviour
 {
     public Text textBanner;
-
-    public Text textClickParada;
-
+    
     public Text textActivarAr;
     
     
@@ -19,13 +17,6 @@ public class textMapaScene : MonoBehaviour
         "Besuchen Sie"
     };
     
-    private string[] clickParada = new []
-    {
-        "Clica sobre una Parada",
-        "Click on a stop",
-        "Klicken Sie auf eine Haltestelle"
-    };
-
     private string[] activarAr = new[]
     {
         "ACTIVAR LA REALIDAD AUMENTADA",
@@ -40,13 +31,6 @@ public class textMapaScene : MonoBehaviour
         int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
         
         textBanner.text = banner[posIdioma].ToUpper();
-        textClickParada.text = clickParada[posIdioma];
         textActivarAr.text = activarAr[posIdioma];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

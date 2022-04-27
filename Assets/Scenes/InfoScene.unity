@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 1435342854}
   - component: {fileID: 1435342853}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textCargando
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,7 +900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0976fe31a9b7d4fa3d0cd382acef18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBanner: {fileID: 7141312274499520243}
+  banner: {fileID: 7141312274499520243}
+  cargando: {fileID: 1435342853}
 --- !u!114 &2269993907413900389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2108,7 +2109,7 @@ GameObject:
   - component: {fileID: 7141312274499520240}
   - component: {fileID: 7141312274499520243}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textBanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

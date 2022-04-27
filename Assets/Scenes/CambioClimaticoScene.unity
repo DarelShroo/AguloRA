@@ -1242,6 +1242,7 @@ GameObject:
   - component: {fileID: 1872156082}
   - component: {fileID: 1872156081}
   - component: {fileID: 1872156086}
+  - component: {fileID: 1872156087}
   m_Layer: 5
   m_Name: CambioClimaticoCanvas
   m_TagString: Untagged
@@ -1355,6 +1356,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759e6eaa96066340bf3e77cf92350c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1872156087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872156080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be67e56c36cb3924f88d183d8527da68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tituloCambioClimatico: {fileID: 6850025421211051947}
 --- !u!114 &2561289316814077245
 MonoBehaviour:
   m_ObjectHideFlags: 0
