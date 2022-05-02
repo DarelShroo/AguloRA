@@ -1,16 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
 
 public class gpsLocation : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
+{ 
+    //Esta clase se encarga de comrobar los permisos del gps
     void Update()
     {
         StartCoroutine(GPSLoc());

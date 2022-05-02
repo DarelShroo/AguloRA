@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using DefaultNamespace;
 using Mapbox.Json;
 using UnityEngine;
@@ -11,86 +9,87 @@ using UnityEngine.UI;
 
 public class textActivarAr : MonoBehaviour
 {
+    //Variables públicas serializadas
+    [SerializeField]
     public GameObject _avisoAr;
+    
+    [SerializeField]
     public GameObject _aviso;
-    public Text textoParada;
-    public Text txtActivarAr;
-    public Text txtAvisoGps;
-    private string nameAnterior;
+    
+    [SerializeField]
+    public Text txtSaludo;
+
+    
+    [SerializeField]
+    public Text activarAr;
+    
+    [SerializeField]
+    public Text avisoGps;
+    
+    [SerializeField]
     public Text textName;
+    
+    [SerializeField]
+    public GameObject imgCarga;
+    
+    //Variables privadas
     private bool _textActivarArBool;
     private Uri url = new  Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-paradas?lang=");
-    public GameObject imgCarga;
-    private string[] clickParada = new []
+ 
+    private string[] txtClickParada = new []
     {
         "Clica sobre una Parada ...",
         "Click on a stop ...",
         "Klicken Sie auf eine Haltestelle ..."
     };
     
-    private string[] activarAr =
+    private string[] txtActivarAr =
     {
         "ACTIVAR LA REALIDAD AUMENTADA",
         "ACTIVATE AUGMENTED REALITY",
         "AUGMENTED REALITY AKTIVIEREN"
     };
 
-    private string[] avisoGps =
+    private string[] txtAvisoGps =
     {
         "Compruebe su conexión a internet y su ubicación e inténtelo de nuevo.",
         "Check your internet connection and location and try again.",
         "Überprüfen Sie Ihre Internetverbindung und Ihren Standort und versuchen Sie es erneut."
     };
     
-    // Update is called once per frame
     void Update()
     {
-      string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-      int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
+        if (!OpenInfo.mostrado)
+        {
+            _aviso.SetActive(true);
+            OpenInfo.mostrado = true;
+        }
 
-      if (!OpenInfo.mostrado)
-      {
-          _aviso.SetActive(true);
-          OpenInfo.mostrado = true;
-      }
-      
 
-      if (!OpenInfo.Name.Replace("\n", "").Equals(OpenInfo.nombreAnterior) && !textName.text.Equals(clickParada[posIdioma])) 
+        if (!OpenInfo.Name.Replace("\n", "")
+                .Replace(" ", "")
+                .Equals(OpenInfo.nombreAnterior.Replace(" ", "")) &&
+            !textName.text.Replace(" ", "").Equals(txtClickParada[Lenguage.posIdioma]
+                .Replace(" ", "")))
+        {
+            try
             {
-                Debug.Log("estoy entrando aqui");
-                try
-                {
-                    imgCarga.SetActive(true);
+                imgCarga.SetActive(true);
+                OpenInfo.nombreAnterior = OpenInfo.Name.Replace("\n", "");
 
-                    /* bool existe = false;
-                     foreach (var parada in paradas)
-                     {
-                         if (parada.Replace("\n","").Equals(OpenInfo.Name.Replace("\n","")))
-                         {
-                             existe = true;
-                         }
-                     }*/
-                    
-                    //Busca si la parada que ha sido visitada o no
-                   // if (!existe)
-                    
-                        OpenInfo.nombreAnterior = OpenInfo.Name.Replace("\n", "");
-                        
-                        txtActivarAr.text = activarAr[posIdioma];
-                        txtAvisoGps.text = avisoGps[posIdioma];
+                activarAr.text = txtActivarAr[Lenguage.posIdioma];
+                avisoGps.text = txtAvisoGps[Lenguage.posIdioma];
 
-                        StartCoroutine(makeRequest());
-                    
-                }
-                catch (Exception e)
-                {
-                }
+                StartCoroutine(makeRequest());
+
             }
-        
-        
-}
-    
-     IEnumerator makeRequest()
+            catch (Exception e)
+            {
+            }
+        }
+    }
+
+    IEnumerator makeRequest()
         {
             
             UnityWebRequest request = UnityWebRequest.Get(url+Lenguage.idioma);
@@ -109,12 +108,11 @@ public class textActivarAr : MonoBehaviour
                 {
                     if (data.titulo.Equals(OpenInfo.name.Replace("\n", "")))
                     {
-                        textoParada.text = data.saludo;
+                        txtSaludo.text = data.saludo;
                     }
                 }
                 imgCarga.SetActive(false);
                 _avisoAr.SetActive(true);
-                
             }
         }
 }

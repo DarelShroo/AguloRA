@@ -11,14 +11,9 @@ namespace DefaultNamespace
 {
     public class getJsonVisitasInfo : MonoBehaviour
     {
-        private string descripcion;
-        
+        //Variables públicas serializadas   
         [SerializeField]
         public RawImage imagen;
-        
-        private Texture texture;
-        private string img_url;
-        private Uri url = new  Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-paradas?lang=");
         
         [SerializeField]
         public GameObject imgGameObject;
@@ -32,13 +27,16 @@ namespace DefaultNamespace
         [SerializeField]
         public GameObject imgCarga;
         
+        
+        //Variables privadas
+        private string descripcion;
+        private Texture texture;
+        private string img_url;
+        private Uri url = new  Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-paradas?lang=");
         private string extra;
         private string slug;
         private String id_parada;
-        
-        [SerializeField]
-        public string idioma;
-        
+
         // called zero
         void Awake()
         {
@@ -49,30 +47,35 @@ namespace DefaultNamespace
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
-            Lenguage.idioma = (Lenguage.idioma == null) ? "es" : Lenguage.idioma;
-
+            //Realizamos una petición al gestor de contenidos para traernos el json
             StartCoroutine(makeRequest());
+            
+            //Realizamos una petición al servidor para traernos la imágen
             StartCoroutine(makeRequestImage());
         }
 
         [RuntimeInitializeOnLoadMethod]
-
         IEnumerator makeRequest()
         {
+            //Realizamos la petición al servidor.
             UnityWebRequest request = UnityWebRequest.Get(url+Lenguage.idioma);
             yield return request.SendWebRequest();
                 
             if (request.result != UnityWebRequest.Result.Success )
             {
+                //La petición falla
                 Debug.Log(request.error);
             }
             else
             {
+                //La petición ha sido satisfactoria
                 var json =
                     JsonConvert.DeserializeObject<List<ObjectInfoParada>>(request.downloadHandler.text);
 
+                //Recorremos todos los objetos deserializados
                 foreach (var data in json)
                 {
+                    //Tratamos de buscar si coincide con el nombre del objeto seteado en OpenInfo.name
                     if (data.titulo.Replace(" ", "").Equals(OpenInfo.name.Replace("\n", "").Replace(" ","")))
                     {
                         descripcion = data.descripcion
@@ -105,16 +108,19 @@ namespace DefaultNamespace
 
         IEnumerator makeRequestImage()
         {
+            //Realizamos una petición al servidor
             yield return new WaitForSeconds(2);
             UnityWebRequest request = UnityWebRequestTexture.GetTexture(img_url);
             yield return request.SendWebRequest();
             
             if (request.result != UnityWebRequest.Result.Success )
             {
+                //La petición falla
                 Debug.Log(request.error);
             }
             else
             {
+                //Construimos la imágen
                 texture =  ((DownloadHandlerTexture)request.downloadHandler).texture;
                 imagen.texture = texture;
                 imgGameObject.SetActive(true);

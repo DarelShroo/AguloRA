@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,10 +24,7 @@ public class textInfoScene : MonoBehaviour
 
     void Start()
     {
-        string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-        int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
-
-        banner.text = textBanner[posIdioma].ToUpper();
-        cargando.text = textCargando[posIdioma];
+        banner.text = textBanner[Lenguage.posIdioma].ToUpper();
+        cargando.text = textCargando[Lenguage.posIdioma];
     }
 }

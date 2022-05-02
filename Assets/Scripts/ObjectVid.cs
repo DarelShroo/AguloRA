@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectVid : MonoBehaviour
+public class ObjectVid
 {
+   //Construccion del objeto parada que contiene los videos
    public int id { get; set;}
    public string id_modelo { get; set;}
    public string titulo { get; set;}

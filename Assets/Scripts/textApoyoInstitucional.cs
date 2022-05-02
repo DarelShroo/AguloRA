@@ -73,21 +73,18 @@ public class textApoyoInstitucional : MonoBehaviour
         "Im Rahmen der Strategie zur partizipativen lokalen Entwicklung von La Gomera finanziertes Projekt " +
         "(Maßnahme 19.2 Leader des Programms zur Entwicklung des ländlichen Raums auf den Kanarischen Inseln)."
     };
-    // Start is called before the first frame update
     void Start()
     {
-        string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-        int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0; 
-        textBanner.text = banner[posIdioma]; 
-       textTitProyecto.text = titProyecto[posIdioma];
-       textProyecto.text = proyecto[posIdioma];
-       textTitTitular.text = titTitular[posIdioma];
-       textTitular.text = titular[posIdioma];
-       textTitpromotor.text = promotor[posIdioma];
-       textTitfinanciadores.text = financiadores[posIdioma];
-       textFi.text = textFinal[posIdioma];
+        textBanner.text = banner[Lenguage.posIdioma]; 
+        textTitProyecto.text = titProyecto[Lenguage.posIdioma];
+       textProyecto.text = proyecto[Lenguage.posIdioma];
+       textTitTitular.text = titTitular[Lenguage.posIdioma];
+       textTitular.text = titular[Lenguage.posIdioma];
+       textTitpromotor.text = promotor[Lenguage.posIdioma];
+       textTitfinanciadores.text = financiadores[Lenguage.posIdioma];
+       textFi.text = textFinal[Lenguage.posIdioma];
 
-       if (idioma == "de")
+       if (Lenguage.idioma == "de")
        {
            textBanner.fontSize = 14;
        }

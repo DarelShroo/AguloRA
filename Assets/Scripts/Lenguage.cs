@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -29,7 +27,7 @@ public class Lenguage : MonoBehaviour
                     idioma = enumerable[0];
                 }
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (Exception e)
             {
                 Debug.Log("Se desborda el array contenido en el fichero de preferencias en idioma");
             }
@@ -52,12 +50,6 @@ public class Lenguage : MonoBehaviour
         posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
     }
 
-    public string getIdioma()
-    {
-        //Devolvemos el valor del idioma "es" "en" "de"
-        return idioma;
-    }
-    
     public void setIdioma(string leng)
     {
         //Seteamos los valores de idioma "es" "en" "de"

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,19 +62,16 @@ public class textVisitas : MonoBehaviour
     
     void Start()
     {
-        string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-        int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
-        
-        textBanner.text = banner[posIdioma].ToUpper();
-        textLugares.text = lugares[posIdioma].ToUpper();
-        textPersonajes.text = personajes[posIdioma].ToUpper();
-        textArquitectura.text = arquitectura[posIdioma].ToUpper();
-        textHistoriaAb.text = historiaAb[posIdioma].ToUpper();
-        textTradiciones.text  = tradiciones[posIdioma].ToUpper();
-        textIniciarVisitas.text = iniciarVisitas[posIdioma];
+        textBanner.text = banner[Lenguage.posIdioma].ToUpper();
+        textLugares.text = lugares[Lenguage.posIdioma].ToUpper();
+        textPersonajes.text = personajes[Lenguage.posIdioma].ToUpper();
+        textArquitectura.text = arquitectura[Lenguage.posIdioma].ToUpper();
+        textHistoriaAb.text = historiaAb[Lenguage.posIdioma].ToUpper();
+        textTradiciones.text  = tradiciones[Lenguage.posIdioma].ToUpper();
+        textIniciarVisitas.text = iniciarVisitas[Lenguage.posIdioma];
 
 
-        if (idioma == "de")
+        if (Lenguage.idioma == "de")
         {
             textLugares.fontSize = 14;
             textPersonajes.fontSize = 14;

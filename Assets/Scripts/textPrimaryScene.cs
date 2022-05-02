@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -55,16 +52,13 @@ public class textPrimaryScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-        int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
+        textVisitas.text = visita[Lenguage.posIdioma];
+        textCambioCli.text = cambioCli[Lenguage.posIdioma];
+        textAppFunc.text = appFunc[Lenguage.posIdioma];
+        textApoyoIns.text = apoyoIns[Lenguage.posIdioma];
+        textIdioma.text = idiomas[Lenguage.posIdioma];
 
-        textVisitas.text = visita[posIdioma];
-        textCambioCli.text = cambioCli[posIdioma];
-        textAppFunc.text = appFunc[posIdioma];
-        textApoyoIns.text = apoyoIns[posIdioma];
-        textIdioma.text = idiomas[posIdioma];
-
-        if (idioma == "de")
+        if (Lenguage.idioma == "de")
         {
             textVisitas.fontSize =14;
             textCambioCli.fontSize = 14;

@@ -7,11 +7,11 @@ public class translateAnimationZ : MonoBehaviour
     public GameObject quad;
     void Update()
     {
-        float maxValue = 0.300f;
+        float maxValue = 0.600f;
         try
         {
             var vectorUp = Vector3.up * (Time.deltaTime / 20);
-            var vectorDown = Vector3.down * 0.25f;
+            var vectorDown = Vector3.down * 0.60f;
 
             var y = quad.transform.position.y;
             if (y > maxValue)
@@ -24,7 +24,6 @@ public class translateAnimationZ : MonoBehaviour
             }
         }
         catch (Exception e)
-        {
-        }
+        {}
     }
 }

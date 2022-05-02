@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ComponentInfo : MonoBehaviour
@@ -10,15 +9,16 @@ public class ComponentInfo : MonoBehaviour
     public Image bannerAr;
     
     [SerializeField]
-    public Image flecha;
-    
-    [SerializeField]
     public Text textActivarAr;
     
     [SerializeField]
     public Text textName;
+    
+    [SerializeField]
+    public GameObject flecha;
     private void Awake()
     {
+        //Evitamos que desaparezca el objeto y nos quedamos con el original
         if (instance == null)
         {
             instance = this;
@@ -32,32 +32,10 @@ public class ComponentInfo : MonoBehaviour
             }
         }
     }
-    public static ComponentInfo Instance
-    {
-        get => instance;
-        set => instance = value;
-    }
 
-    public Image BannerAr
+    private string[] textParada = new []
     {
-        get => bannerAr;
-        set => bannerAr = value;
-    }
-
-     public Text TextActivarAr
-     {
-         get => textActivarAr;
-         set => textActivarAr = value;
-     }
-
-    public Text TextName
-    {
-        get => textName;
-        set => textName = value;
-    }
-    
-    private string[] clickParada = new []
-    {
+        //Texto titulo parada
         "Clica sobre una Parada ...",
         "Click on a stop ...",
         "Klicken Sie auf eine Haltestelle ..."
@@ -68,7 +46,8 @@ public class ComponentInfo : MonoBehaviour
         bannerAr.color = OpenInfo.colorActivarAr; // Color banner
         textName.text = OpenInfo.Name.Replace("\n","") != "" ?
             OpenInfo.Name.Replace("\n",""):
-            clickParada[Lenguage.posIdioma];
+            textParada[Lenguage.posIdioma];
         textActivarAr.color = OpenInfo.textActivarAr;
+        flecha.SetActive(OpenInfo.flechaActiva);
     }
 }

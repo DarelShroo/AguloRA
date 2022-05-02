@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,11 +36,8 @@ public class textInfoCanvas : MonoBehaviour
     };
     void Start()
     {
-        string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-        int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
-
-        textAtencion.text = atencion[posIdioma];
-        textAviso.text = aviso[posIdioma];
-        textAvisoGps.text = avisoGps[posIdioma];
+        textAtencion.text = atencion[Lenguage.posIdioma];
+        textAviso.text = aviso[Lenguage.posIdioma];
+        textAvisoGps.text = avisoGps[Lenguage.posIdioma];
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -8,24 +7,14 @@ using Newtonsoft.Json;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-
 namespace DefaultNamespace
 {
     public class getJsonClimaticoAndFunciones : MonoBehaviour
     {
-        private string descripcion;
-        
+        //Variables públicas serializadas   
         [SerializeField]
         public RawImage imagen;
 
-        public Text textBanner;
-        
-        private Texture texture;
-        private string img_url;
-        private Uri urlClimatico = new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-climatico?lang=");
-        private Uri urlFunciones= new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-funciones?lang=");
-        private Uri url;
-        
         [SerializeField]
         public GameObject imgGameObject;
         
@@ -36,18 +25,27 @@ namespace DefaultNamespace
         public GameObject imgCarga;
         
         [SerializeField]
-        public string idioma;
-        // called zero
-
-        private string[] bannerClimatico = new[]
+        public Text textBanner;
+        
+        //Variables privadas
+        private string descripcion;
+        private Texture texture;
+        private string img_url;
+        private Uri urlClimatico = new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-climatico?lang=");
+        private Uri urlFunciones= new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-funciones?lang=");
+        private Uri url;
+        
+        private string[] textBannerClimatico = new[]
         {
+            //Texto Banner Cambio Climatico
             "CAMBIO CLIMATICO",
             "CLIMATE CHANGE",
             "KLIMAWANDEL"
         }; 
         
-        private string[] bannerAppFunciones = new[]
+        private string[] textBannerAppFunciones = new[]
         {
+            //Texto banner APP Y FUNCIONES
             "APP Y FUNCIONES",
             "APP AND FUNCTION",
             "APP UND FUNKTIONEN"
@@ -61,14 +59,18 @@ namespace DefaultNamespace
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
+            //Obtenemos el número de escena en la que nos encontramos
             int nEscena = SceneManager.GetActiveScene().buildIndex;
-            url = nEscena == 4 ? urlClimatico : urlFunciones;
-            Lenguage.idioma = (Lenguage.idioma == null) ? "es" : Lenguage.idioma;
-            int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
-
-            textBanner.text = nEscena == 4 ? bannerClimatico[posIdioma] : bannerAppFunciones[posIdioma];
             
+            //Comrobamos el índice de la escena para saber como tratar el json
+            url = nEscena == 4 ? urlClimatico : urlFunciones;
+            
+            //Seteamos el texto  del banner de la escena según su idioma y la escena en la que nos encontramos
+            textBanner.text = nEscena == 4 ? textBannerClimatico[Lenguage.posIdioma] : textBannerAppFunciones[Lenguage.posIdioma];
+            
+            //Inicializamos la petición al gestor de contenidos
             StartCoroutine(makeRequest());
+            //Inicializamos la obtención de la textura desde el gestor de contenidos para posteriormente convertirla a imagen
             StartCoroutine(makeRequestImage());
         }
 
@@ -76,19 +78,22 @@ namespace DefaultNamespace
 
         IEnumerator makeRequest()
         {
-            
+            //Realizamos una petición al servidor
                 UnityWebRequest request = UnityWebRequest.Get(url + Lenguage.idioma);
                 yield return request.SendWebRequest();
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
+                    //La petición falla
                     Debug.Log(request.error);
                 }
                 else
                 {
-                    var cambio_climatico =
+                    //Si la petición es satisfactoria intentamos serializar el objeto y traernos el json del gestor de contenidos.
+                    var objeto =
                         JsonConvert.DeserializeObject<ObjectImgAndText>(request.downloadHandler.text);
-                    descripcion = cambio_climatico.descripcion
+                    //Filtramos los datos traidos
+                    descripcion = objeto.descripcion
                         .Replace("<p>", "")
                         .Replace("</p>", "")
                         .Replace("&#8211;", "- ")
@@ -118,23 +123,27 @@ namespace DefaultNamespace
                     Debug.Log("<p class=" + '"' + "tw-data-text tw-text-large XcVN5d tw-ta" + '"' + "dir=" + '"' +
                               "ltr" + '"' + " data-placeholder=" + '"' + "Traducción" + '"' + ">");
                     textMeshProObject.text = descripcion;
-                    img_url = cambio_climatico.imagen;
+                    //Seteamos la url de la imágen
+                    img_url = objeto.imagen;
                 }
            
         }
         [RuntimeInitializeOnLoadMethod]
         IEnumerator makeRequestImage()
         {
+            //Realiza una petición al servidor
             yield return new WaitForSeconds(2);
             UnityWebRequest request = UnityWebRequestTexture.GetTexture(img_url);
             yield return request.SendWebRequest();
             
             if (request.result != UnityWebRequest.Result.Success )
             {
+                //La petición falla
                 Debug.Log(request.error);
             }
             else
             {
+                //Construimos la imágen
                 texture =  ((DownloadHandlerTexture)request.downloadHandler).texture;
                 imagen.texture = texture;
                 imgGameObject.SetActive(true);

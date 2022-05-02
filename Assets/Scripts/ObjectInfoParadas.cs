@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace DefaultNamespace
+﻿namespace DefaultNamespace
 {
     public class ObjectInfoParada
     {
+        //Objeto que contiene los datos para la construccion de la información de las paradas
         public int id { get; set;}
         public string id_parada { get; set;}
         public string titulo { get; set;}

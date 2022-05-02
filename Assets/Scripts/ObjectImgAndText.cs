@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace DefaultNamespace
+﻿namespace DefaultNamespace
 {
     public class ObjectImgAndText
     {
+        //Objeto con los datos que nos proporcionan para el contenido de las escenas
+        //CambioClimaticoScene y FuncionesAppScene
         public int id { get; set;}
         public string titulo { get; set;}
         public string descripcion { get; set;}

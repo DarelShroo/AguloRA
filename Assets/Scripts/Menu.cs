@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+   //Esta clase se encarga de la apertura y cierre de la escena MenuBlackScene
    public static Menu instance;
    public static int backScene;
    private void Awake()

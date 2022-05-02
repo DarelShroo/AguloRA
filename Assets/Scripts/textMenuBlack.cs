@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,20 +57,16 @@ public class textMenuBlack : MonoBehaviour
         "Rechtstext"
     };
 
-    // Start is called before the first frame update
     void Start()
     {
-        string idioma = Lenguage.idioma == null ? "es" : Lenguage.idioma;
-        int posIdioma = idioma == "es" ? 0 : idioma == "en" ? 1 : idioma == "de" ? 2 : 0;
+        visitas.text = textVisitas[Lenguage.posIdioma].ToUpper();
+        cambioCli.text = textCambioCli[Lenguage.posIdioma].ToUpper();
+        appFunc.text = textAppFunc[Lenguage.posIdioma].ToUpper();
+        apoyoIns.text = textApoyoIns[Lenguage.posIdioma].ToUpper();
+        idiomas.text = textIdiomas[Lenguage.posIdioma].ToUpper();
+        legal.text = textoLegal[Lenguage.posIdioma].ToUpper();
 
-        visitas.text = textVisitas[posIdioma].ToUpper();
-        cambioCli.text = textCambioCli[posIdioma].ToUpper();
-        appFunc.text = textAppFunc[posIdioma].ToUpper();
-        apoyoIns.text = textApoyoIns[posIdioma].ToUpper();
-        idiomas.text = textIdiomas[posIdioma].ToUpper();
-        legal.text = textoLegal[posIdioma].ToUpper();
-
-        if (idioma == "de")
+        if (Lenguage.idioma == "de")
         {
             visitas.fontSize = 26;
             cambioCli.fontSize = 26;
@@ -82,11 +76,5 @@ public class textMenuBlack : MonoBehaviour
             legal.fontSize = 26;
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

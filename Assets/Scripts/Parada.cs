@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Parada
 {
+    //Constriccion del objeto Parada
     private string nombre;
     private string coordenadas;
     private string tipo;

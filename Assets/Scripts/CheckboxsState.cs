@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class CheckboxsState : MonoBehaviour
 {
     //Esta clase es un molde que contiene los valores booleanos
@@ -38,12 +37,6 @@ public class CheckboxsState : MonoBehaviour
             }
         }
     }
-    
-    public static string NameInfo
-    {
-        get => nameInfo;
-        set => nameInfo = value;
-    }
 
     public bool Lugares
     {
@@ -73,18 +66,6 @@ public class CheckboxsState : MonoBehaviour
     {
         get => historiaAborigen;
         set => historiaAborigen = value;
-    }
-
-    public GameObject IniciarVisita
-    {
-        get => iniciarVisita;
-        set => iniciarVisita = value;
-    }
-
-    public static CheckboxsState Instance
-    {
-        get => instance;
-        set => instance = value;
     }
 
     public bool Iniciado
