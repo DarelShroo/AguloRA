@@ -11,7 +11,6 @@ public class cacheFirstExecution : MonoBehaviour
     
     void Start()
     {
-        
         try
         {
             string path = Application.persistentDataPath + "/preference.txt";

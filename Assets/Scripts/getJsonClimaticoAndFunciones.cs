@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using easyar;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -27,6 +28,9 @@ namespace DefaultNamespace
         [SerializeField]
         public Text textBanner;
         
+        [SerializeField]
+        public GameObject scrollArea;
+        
         //Variables privadas
         private string descripcion;
         private Texture texture;
@@ -34,6 +38,7 @@ namespace DefaultNamespace
         private Uri urlClimatico = new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-climatico?lang=");
         private Uri urlFunciones= new Uri("https://app.agulopuntoinfo.es/wp-json/agulo/v1/get-funciones?lang=");
         private Uri url;
+        private ResetStateCheckBox _resetStateCheckBox;
         
         private string[] textBannerClimatico = new[]
         {
@@ -55,7 +60,12 @@ namespace DefaultNamespace
             getTextCambioClimatico();
         }
 
-        
+        private void Start()
+        {
+            //_resetStateCheckBox.Reset();
+        }
+
+
         [RuntimeInitializeOnLoadMethod]
         public void getTextCambioClimatico()
         {
@@ -66,8 +76,8 @@ namespace DefaultNamespace
             url = nEscena == 4 ? urlClimatico : urlFunciones;
             
             //Seteamos el texto  del banner de la escena según su idioma y la escena en la que nos encontramos
-            textBanner.text = nEscena == 4 ? textBannerClimatico[Lenguage.posIdioma] : textBannerAppFunciones[Lenguage.posIdioma];
-            
+            textBanner.text = (nEscena == 4) ? textBannerClimatico[Lenguage.posIdioma] : textBannerAppFunciones[Lenguage.posIdioma];
+            Debug.Log(nEscena + "numnero de escena");
             //Inicializamos la petición al gestor de contenidos
             StartCoroutine(makeRequest());
             //Inicializamos la obtención de la textura desde el gestor de contenidos para posteriormente convertirla a imagen
@@ -148,6 +158,7 @@ namespace DefaultNamespace
                 imagen.texture = texture;
                 imgGameObject.SetActive(true);
                 imagen.SetAllDirty();
+                scrollArea.SetActive(true);
                 imgCarga.SetActive(false);
             }
         }

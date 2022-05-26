@@ -1590,6 +1590,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CabeceraBotonesTituloMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6850025420494918406, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -35.333847
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420494918406, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -17.666924
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850025420494918406, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -163.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc680ba60c4902f4583bbcde676b781d, type: 3}
 --- !u!224 &882029049 stripped

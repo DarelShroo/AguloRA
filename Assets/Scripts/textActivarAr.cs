@@ -20,8 +20,8 @@ public class textActivarAr : MonoBehaviour
     public Text txtSaludo;
 
     
-    [SerializeField]
-    public Text activarAr;
+    //[SerializeField]
+   //public Text activarAr;
     
     [SerializeField]
     public Text avisoGps;
@@ -77,7 +77,7 @@ public class textActivarAr : MonoBehaviour
                 imgCarga.SetActive(true);
                 OpenInfo.nombreAnterior = OpenInfo.Name.Replace("\n", "");
 
-                activarAr.text = txtActivarAr[Lenguage.posIdioma];
+                //activarAr.text = txtActivarAr[Lenguage.posIdioma];
                 avisoGps.text = txtAvisoGps[Lenguage.posIdioma];
 
                 StartCoroutine(makeRequest());

@@ -19,7 +19,7 @@ EditorBuildSettings:
     guid: ce8b561887b6c904e858eac458d46dce
   - enabled: 1
     path: Assets/Scenes/CambioClimaticoScene.unity
-    guid: c542504f3bc654144a6813a9e184a416
+    guid: 632c634ceceb4804eabc7bca18e48a9f
   - enabled: 1
     path: Assets/Scenes/FuncionesAppScene.unity
     guid: a8bb4657770cd0346a055d72a09225d0

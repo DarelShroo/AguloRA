@@ -27,6 +27,8 @@ namespace DefaultNamespace
         [SerializeField]
         public GameObject imgCarga;
         
+        [SerializeField]
+        public GameObject scrollArea;
         
         //Variables privadas
         private string descripcion;
@@ -125,6 +127,7 @@ namespace DefaultNamespace
                 imagen.texture = texture;
                 imgGameObject.SetActive(true);
                 imagen.SetAllDirty();
+                scrollArea.SetActive(true);
                 imgCarga.SetActive(false);
             }
         }

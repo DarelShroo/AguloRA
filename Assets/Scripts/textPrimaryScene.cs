@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class textPrimaryScene : MonoBehaviour
@@ -13,6 +14,7 @@ public class textPrimaryScene : MonoBehaviour
 
     public Text textIdioma;
 
+    private ResetStateCheckBox _resetStateCheckBox;
 
     private string[] visita = new[]
     {
@@ -37,7 +39,7 @@ public class textPrimaryScene : MonoBehaviour
 
     private string[] apoyoIns = new[]
     {
-        "APOYO INSTITICIONAL",
+        "APOYO INSTITUCIONAL",
         "INSTITUTIONAL SUPPORT",
         "INSTITUTIONELLE UNTERSTÜTZUNG"
     };
@@ -58,6 +60,8 @@ public class textPrimaryScene : MonoBehaviour
         textApoyoIns.text = apoyoIns[Lenguage.posIdioma];
         textIdioma.text = idiomas[Lenguage.posIdioma];
 
+       // _resetStateCheckBox.Reset();
+
         if (Lenguage.idioma == "de")
         {
             textVisitas.fontSize =14;
@@ -66,5 +70,9 @@ public class textPrimaryScene : MonoBehaviour
             textApoyoIns.fontSize = 14;
             textIdioma.fontSize = 14;
         }
+        
+        //Pre cargamos el mapa
+        AsyncOperation async = SceneManager.LoadSceneAsync(7);
+        async.allowSceneActivation = false;
     }
 }

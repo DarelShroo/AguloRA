@@ -148,7 +148,6 @@
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Waypoint.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\LonLatToGeoCoordinateConverter.cs" />
      <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\TileErrorHandler.cs" />
-     <Compile Include="Assets\Scripts\textCambioClimatico.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\MapMatching\MapMatchingResource.cs" />
      <Compile Include="Assets\Mapbox\Unity\Location\LocationArrayEditorLocationProvider.cs" />
      <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\FlatSphereTerrainStrategy.cs" />
@@ -214,7 +213,6 @@
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\IResource.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\RoutingProfile.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\TileCover.cs" />
-     <Compile Include="Assets\Scripts\textAppFunc.cs" />
      <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\AbstractTileFactory.cs" />
      <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\FlatTerrainStrategy.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\PolygonUtils.cs" />
@@ -733,6 +731,12 @@
  </Reference>
  <Reference Include="Mapbox.VectorTile.Geometry">
  <HintPath>C:/Users/psych/Desktop/hoy22/AguloRA/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

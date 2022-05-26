@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class textApoyoInstitucional : MonoBehaviour
     public Text textTitfinanciadores;
     public Text textFi;
 
+    private ResetStateCheckBox _resetStateCheckBox;
     private string[] banner = new[]
     {
         "APOYO INSTITUCIONAL",
@@ -75,6 +77,7 @@ public class textApoyoInstitucional : MonoBehaviour
     };
     void Start()
     {
+       // _resetStateCheckBox.Reset();
         textBanner.text = banner[Lenguage.posIdioma]; 
         textTitProyecto.text = titProyecto[Lenguage.posIdioma];
        textProyecto.text = proyecto[Lenguage.posIdioma];

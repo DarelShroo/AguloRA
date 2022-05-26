@@ -14,6 +14,7 @@ public class CheckStateTracking : MonoBehaviour
     //Esta clase se encarga de comprobar continuamente el estado del tracking de la imágen para AR
     //Evita que muestre en AR el contenido de la parada equivocada.
     //Se encarga de traer los videos del gestor de contenidos.
+    
     [SerializeField]
     public GameObject[] objetos;
     
@@ -127,7 +128,7 @@ public class CheckStateTracking : MonoBehaviour
                         vid = objeto.transform.Find("Quad").gameObject.GetComponent<VideoPlayer>();
                         vid.url = urlVideo;
 
-                        vid.transform.localScale = new Vector3(3f,3.2f,3f);
+                        vid.transform.localScale = new Vector3(3.63f,3.872f,0.00001f);
                         vid.aspectRatio = VideoAspectRatio.FitVertically;
                         vid.audioOutputMode = VideoAudioOutputMode.AudioSource;
                         vid.EnableAudioTrack (0, true);
