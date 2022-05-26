@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Project
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 177
+  controlID: 139
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
     y: 0
     width: 2560
     height: 989
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -369,22 +369,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Images/PNG/TARGET
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Images/PNG/TARGET
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\psych\Desktop\hoy22\AguloRA
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3a500000
-    m_LastClickedID: 20538
-    m_ExpandedIDs: 000000009c4f00009e4f0000a04f000000ca9a3b
+    m_SelectedIDs: 4a500000
+    m_LastClickedID: 20554
+    m_ExpandedIDs: 000000009a4f00009c4f00009e4f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009c4f00009e4f0000a04f0000
+    m_ExpandedIDs: 000000009a4f00009c4f00009e4f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -533,9 +533,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b6440000
-      m_LastClickedID: 17590
-      m_ExpandedIDs: 70fbfffff6430000024400001a440000b6440000b2450000ca450000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 70fbfffff44300000044000018440000b4440000b0450000c8450000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: anim
@@ -546,7 +546,7 @@ MonoBehaviour:
           y: 0
           width: 0
           height: 0
-        m_UserData: 18682
+        m_UserData: 18680
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -595,9 +595,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 720, y: 1479.9694, z: -9.176252}
+    m_Target: {x: 719.99805, y: 1480.0103, z: -8.985735}
     speed: 2
-    m_Value: {x: 720, y: 1479.9694, z: -9.176252}
+    m_Value: {x: 719.99805, y: 1480.0103, z: -8.985735}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -646,11 +646,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.020900134, y: -0.5756211, z: 0.014606394, w: -0.8173989}
     speed: 2
-    m_Value: {x: -0.017148435, y: -0.5805376, z: 0.012117825, w: -0.81396264}
+    m_Value: {x: 0.020900134, y: 0.57562107, z: -0.014606393, w: 0.81739885}
   m_Size:
-    m_Target: 7.0750647
+    m_Target: 0.15787652
     speed: 2
-    m_Value: 7.0750504
+    m_Value: 0.15787657
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -731,7 +731,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -744,20 +744,20 @@ MonoBehaviour:
       y: 21
       width: 1422
       height: 349
-    m_Scale: {x: 0.11790541, y: 0.11790541}
-    m_Translation: {x: 711, y: 174.5}
+    m_Scale: {x: 0.1326125, y: 0.1326125}
+    m_Translation: {x: 711, y: 165.27365}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -6030.258
-      y: -1480
-      width: 12060.516
-      height: 2960
+      x: -5361.486
+      y: -1246.2902
+      width: 10722.972
+      height: 2631.7278
     m_MinimalGUI: 1
-  m_defaultScale: 0.11790541
+  m_defaultScale: 0.125
   m_LastWindowPixelSize: {x: 1422, y: 370}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
