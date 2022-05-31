@@ -62,8 +62,6 @@ ScriptsOnlyBuild:
     - textVisitSceneAr
     - textVisitas
     - translateAnimationZ
-    EasyAR.Sense.Editor.dll:
-    - easyar.ImageTargetDataGenerator
     EasyAR.Sense.dll:
     - easyar.ARComponentPicker
     - easyar.ARSession
@@ -317,7 +315,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5840}
     - Class: 114
-      Script: {instanceID: 25312}
+      Script: {instanceID: 25272}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2610,4 +2608,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MapaScene.unity
   - Assets/Scenes/InfoScene.unity
   - Assets/Scenes/MenuBlackScene.unity
-  playerPath: C:/Users/psych/Desktop/aguloAr25-05.apk
+  playerPath: C:/Users/psych/Desktop/aguloAr26-05.apk
